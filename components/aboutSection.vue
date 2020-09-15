@@ -1,7 +1,7 @@
 <template>
   <section id="about">
-  <h2>About</h2>
-  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur reiciendis aspernatur porro amet voluptate rem nisi sapiente placeat mollitia quo quas quam ullam quisquam, ex accusamus aut, optio ipsum corporis.</p>
+  <h2 class="t-header">About</h2>
+  <p class="t-body-primary">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur reiciendis aspernatur porro amet voluptate rem nisi sapiente placeat mollitia quo quas quam ullam quisquam, ex accusamus aut, optio ipsum corporis.</p>
   </section>
 </template>
 

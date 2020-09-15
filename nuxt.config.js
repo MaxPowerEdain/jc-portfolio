@@ -52,7 +52,7 @@ export default {
   modules: [
     // Doc: https://bootstrap-vue.js.org
     'bootstrap-vue/nuxt',
-    '@nuxtjs/style-resources',
+    '@nuxtjs/style-resources'
   ],
   /*
   ** Build configuration
@@ -63,6 +63,7 @@ export default {
   styleResources: {
     scss: [
         '~/assets/scss/variables.scss',
+        '~/assets/scss/text-global.scss'
     ]
 }
 }

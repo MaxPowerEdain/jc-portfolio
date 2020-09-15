@@ -1,6 +1,6 @@
 <template>
 <section id="portfolio">
-  <h2>Portfolio</h2>
+  <h2 class="t-header">Portfolio</h2>
 </section>
 </template>
 

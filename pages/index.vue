@@ -39,7 +39,13 @@ export default {
   },
   head(){
     return {
-      title: 'JC-Portfolio'
+      title: 'JC-Portfolio',
+      link: [
+          {
+            rel: 'stylesheet',
+            href: 'https://fonts.googleapis.com/css2?family=Nunito&family=Space+Mono&display=swap'
+          }
+        ]
     }
   }
 }

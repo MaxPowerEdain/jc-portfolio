@@ -1,10 +1,10 @@
 <template>
 <div class="wrapper">
-  <b-navbar toggleable="lg" type="dark" variant="info">
-    <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+  <b-navbar toggleable="lg" type="dark" variant="info" class="bg-transparent">
+    <b-navbar-toggle target="nav-collapse" class="ml-auto"></b-navbar-toggle>
 
     <b-collapse id="nav-collapse" is-nav>
-      <b-navbar-nav class="ml-auto">
+      <b-navbar-nav class="ml-auto t-nav text-right">
         <b-nav-item href="/#home">Home</b-nav-item>
         <b-nav-item href="/#about">About Me</b-nav-item>
         <b-nav-item href="/#portfolio">Portfolio</b-nav-item>
@@ -22,9 +22,11 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .wrapper{
   position: sticky;
   top: 0;
+  background-color: $primary-light;
+  color: white;
 }
 </style>

@@ -1,9 +1,9 @@
 <template>
   <div>
-    <h1>{{ project.name }}</h1>
-    <p>{{ project.description }}</p>
-    <p>{{ project.learning }}</p>
-    <p>{{ project.problems }}</p>
+    <h1 class="t-header">{{ project.name }}</h1>
+    <p class="t-body-primary">{{ project.description }}</p>
+    <p class="t-body-primary">{{ project.learning }}</p>
+    <p class="t-body-primary">{{ project.problems }}</p>
   </div>
 </template>
 

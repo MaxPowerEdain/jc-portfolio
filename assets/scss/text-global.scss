@@ -1,0 +1,47 @@
+.t-header{
+  font-family: $header-font;
+  font-size: 24px;
+  @media (min-width: $breakpoint) {
+    font-size: 48px;
+  }
+}
+
+.t-header-small{
+  font-family: $header-font;
+  font-size: 18px;
+  @media (min-width: $breakpoint) {
+    font-size: 22px;
+  }
+}
+
+.t-nav{
+  font-family: $header-font;
+  font-size: 20px;
+  @media (min-width: $breakpoint) {
+    font-size: 24px;
+  }
+}
+
+.t-body-primary{
+  font-family: $body-font;
+  font-size: 16px;
+  @media (min-width: $breakpoint) {
+    font-size: 20px;
+  }
+}
+
+.t-body-secondary{
+  font-family: $body-font;
+  font-size: 14px;
+  @media (min-width: $breakpoint) {
+    font-size: 16px;
+  }
+}
+
+.t-body-tertiary{
+  font-family: $body-font;
+  font-size: 12px;
+  @media (min-width: $breakpoint) {
+    font-size: 14px;
+  }
+}
