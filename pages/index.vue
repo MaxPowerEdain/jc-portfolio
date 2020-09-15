@@ -1,73 +1,51 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        jc-portfolio
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+  <div>
+    <h1 id="home">Portfolio Home</h1>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat eveniet asperiores dignissimos, illum quae dolores sit delectus! Aliquam vel possimus non ex dolore, enim quisquam, beatae sunt odio iste voluptatem.</p>
+    
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat eveniet asperiores dignissimos, illum quae dolores sit delectus! Aliquam vel possimus non ex dolore, enim quisquam, beatae sunt odio iste voluptatem.</p>
+    
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat eveniet asperiores dignissimos, illum quae dolores sit delectus! Aliquam vel possimus non ex dolore, enim quisquam, beatae sunt odio iste voluptatem.</p>
+    
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat eveniet asperiores dignissimos, illum quae dolores sit delectus! Aliquam vel possimus non ex dolore, enim quisquam, beatae sunt odio iste voluptatem.</p>
+    <h2 id="about">About</h2>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur reiciendis aspernatur porro amet voluptate rem nisi sapiente placeat mollitia quo quas quam ullam quisquam, ex accusamus aut, optio ipsum corporis.</p>
+    <h2 id="portfolio">Portfolio</h2>
+    <projectCard v-for="project in projects" 
+      :key="project.id" 
+      :id="project.id" 
+      :projectName="project.name"
+      :projectDescription="project.description"
+    />
+    <h2 id="contact">Contact</h2>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et corrupti voluptates odio incidunt deserunt earum a, neque nemo sunt? Nam quam magni debitis voluptatibus possimus corrupti assumenda sint praesentium! Excepturi?</p>
   </div>
 </template>
 
 <script>
-export default {}
+import projectsJSON from '../static/projects.json';
+import projectCard from '../components/projectCard';
+
+export default {
+  components: {
+    projectCard
+  },
+  data() {
+    return {
+      projects: []
+    }
+  },
+  created() {
+    this.projects = projectsJSON;
+  },
+  head(){
+    return {
+      title: 'JC-Portfolio'
+    }
+  }
+}
 </script>
 
 <style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
 
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
 </style>
