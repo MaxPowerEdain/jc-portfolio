@@ -11,6 +11,24 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+#contact{
+  background: $primary-gradient;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+#contact h2{
+  margin: 100px 0px; //TODO replace with responsive units
+  font-size: 36px; //TODO probably move to text-global.scss
+  @media (min-width: $breakpoint) {
+    font-size: 64px
+  }
+}
+
+#contact p{
+  width: 50%; //TODO finetune value
+}
 </style>

@@ -14,6 +14,17 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss">
+.projectCard{
+  background-color: $secondary-dark;
+  margin: 20px 0; //TODO replace values, just testing
+  color: white;
+  text-decoration: none;
+}
+nuxt-link{
+  :hover{
+    text-decoration: none;
+    background-color: $secondary-light;
+  }
+}
 </style>
