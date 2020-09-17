@@ -15,7 +15,7 @@ export default {
 #home{
   background: $primary-gradient;
   color: white;
-  height: 91vh;
+  height: 95vh;
   display: flex;
   flex-direction: column;
   align-items: center;
