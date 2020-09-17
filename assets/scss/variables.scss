@@ -10,3 +10,13 @@ $primary-gradient: linear-gradient(0deg, #040F57 0%, #12348D 100%);
 $breakpoint: 992px;
 $header-font: 'Space Mono', monospace;
 $body-font: 'Nunito', sans-serif;
+
+:export{
+  primaryDark: $primary-dark;
+  primaryLight: $primary-light;
+  secondaryDark: $secondary-dark;
+  secondaryLight: $secondary-light;
+  accentColor: $accent-color;
+  accentBright: $accent-bright;
+  primaryGradient: $primary-gradient;
+}

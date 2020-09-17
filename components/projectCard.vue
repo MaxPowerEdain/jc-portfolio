@@ -3,6 +3,7 @@
   <div class="projectCard">
     <p class="t-header-small">{{ projectName }}</p>
     <p class="t-body-primary">{{ projectDescription }}</p>
+    <div class="projectCardImage"></div>
   </div>
 </nuxt-link>
 </template>
@@ -17,7 +18,6 @@ export default {
 <style lang="scss">
 .projectCard{
   background-color: $secondary-dark;
-  margin: 20px 0; //TODO replace values, just testing
   color: white;
   text-decoration: none;
 }
@@ -26,5 +26,10 @@ nuxt-link{
     text-decoration: none;
     background-color: $secondary-light;
   }
+}
+.projectCardImage{
+  background-color: white;
+  height: 150px;
+  width: 250px;
 }
 </style>
