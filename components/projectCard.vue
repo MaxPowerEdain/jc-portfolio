@@ -17,7 +17,6 @@ export default {
 
 <style lang="scss">
 .projectCard{
-  background-color: $secondary-dark;
   color: white;
   text-decoration: none;
 }

@@ -18,38 +18,38 @@
 
 <script>
 export default {
-  name: 'appHeader'
-}
+  name: 'appHeader',
+  mounted() {
+    const navBar = document.querySelector('#nav-bar-wrapper');
+    const startColor = [18, 52, 141];
+    const endColor = [4, 15, 87]; //todo pick from scss or background gradient
+    let incrementArray = [];
 
-const startColor = [18, 52, 141];
-const endColor = [4, 15, 87]; //todo pick from scss or background gradient
-let incrementArray = [];
+    //calculates the increment/decrement between the two colors
+    for(let i = 0; i < endColor.length; i++){
+      incrementArray.push(endColor[i] - startColor[i]);
+    }
 
-//calculates the increment/decrement between the two colors
-for(let i = 0; i < endColor.length; i++){
-  incrementArray.push(endColor[i] - startColor[i]);
-}
+    window.addEventListener('scroll', () =>{
+      let navBarHeight = navBar.clientHeight;
+      let windowHeight = window.innerHeight;
+      let windowScrolled = window.scrollY;
 
-window.addEventListener('scroll', () =>{
-  const navBar = document.querySelector('#nav-bar-wrapper');
-  let navBarHeight = navBar.clientHeight;
-  let windowHeight = window.innerHeight;
-  let windowScrolled = window.scrollY;
-
-//calculates how much screen we scrolled (between 0 and 1)
-  let scrollRatio = (windowHeight - windowScrolled)/windowHeight;
-  let scrollRatioNav = (windowHeight - windowScrolled - navBarHeight * (1 - scrollRatio))/windowHeight;
-  let newColor = [];
-  for(let i = 0; i < incrementArray.length; i++){
-    newColor.push((1 - scrollRatioNav) * incrementArray[i] + startColor[i]);
+    //calculates how much screen we scrolled (between 0 and 1)
+      let scrollRatio = (windowHeight - windowScrolled)/windowHeight;
+      let scrollRatioNav = (windowHeight - windowScrolled - navBarHeight * (1 - scrollRatio))/windowHeight;
+      let newColor = [];
+      for(let i = 0; i < incrementArray.length; i++){
+        newColor.push((1 - scrollRatioNav) * incrementArray[i] + startColor[i]);
+      }
+      let [r, g, b] = newColor;
+      r = Math.max(endColor[0], Math.min(r, startColor[0]));
+      g = Math.max(endColor[1], Math.min(g, startColor[1]));
+      b = Math.max(endColor[2], Math.min(b, startColor[2]));
+      navBar.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+    });
   }
-  let [r, g, b] = newColor;
-  r = Math.max(endColor[0], Math.min(r, startColor[0]));
-  g = Math.max(endColor[1], Math.min(g, startColor[1]));
-  b = Math.max(endColor[2], Math.min(b, startColor[2]));
-  navBar.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-});
-
+}
 </script>
 
 <style lang="scss">

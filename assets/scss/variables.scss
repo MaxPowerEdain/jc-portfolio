@@ -1,5 +1,7 @@
 $primary-dark: #040F57;
+$primary-dark-rgb: rgb(4, 15, 87);
 $primary-light: #12348D;
+$primary-light-rgb: rgb(18, 52, 141);
 $secondary-dark: #9043C3;
 $secondary-light: #D75CA2;
 $accent-color: #BD2B48;
@@ -12,11 +14,10 @@ $header-font: 'Space Mono', monospace;
 $body-font: 'Nunito', sans-serif;
 
 :export{
-  primaryDark: $primary-dark;
-  primaryLight: $primary-light;
+  accentBright: $accent-bright;
+  accentColor: $accent-color;
   secondaryDark: $secondary-dark;
   secondaryLight: $secondary-light;
-  accentColor: $accent-color;
-  accentBright: $accent-bright;
-  primaryGradient: $primary-gradient;
+  primaryDark: $primary-dark;
+  primaryLight: $primary-light;
 }

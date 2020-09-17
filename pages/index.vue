@@ -3,12 +3,14 @@
     <homeSection/>
     <aboutSection/>
     <portfolioSection/>
-    <projectCard v-for="project in projects" 
-      :key="project.id" 
-      :id="project.id" 
-      :projectName="project.name"
-      :projectDescription="project.description"
-    />
+    <div id="projectCardContainer">
+      <projectCard class="projectCardTemplate" v-for="project in projects" 
+        :key="project.id" 
+        :id="project.id" 
+        :projectName="project.name"
+        :projectDescription="project.description"
+      />
+    </div>
     <contactSection/>
   </div>
 </template>
@@ -19,7 +21,8 @@ import projectCard from '../components/projectCard';
 import homeSection from '../components/homeSection';
 import aboutSection from '../components/aboutSection';
 import portfolioSection from '../components/portfolioSection';
-import contactSection from '../components/contactSection'
+import contactSection from '../components/contactSection';
+import style from '../assets/scss/variables.scss';
 
 export default {
   components: {
@@ -37,6 +40,20 @@ export default {
   created() {
     this.projects = projectsJSON;
   },
+  mounted(){
+    const projectCards = document.querySelectorAll(".projectCard");
+    let colours = [];
+    for(let color in style){
+      colours.push(style[color]);
+    }
+
+    //iterates through the projectCards and assigns color from colour array
+    let i = 0;
+    projectCards.forEach(projectCardInstance => {
+      projectCardInstance.style.backgroundColor = colours[i%colours.length];
+      i++;
+    });
+  },
   head(){
     return {
       title: 'JC-Portfolio',
@@ -51,6 +68,11 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss">
+.projectCardTemplate:nth-child(odd){
+    text-align: right;
+  }
+.projectCardTemplate:nth-child(even){
+    color: green;
+  }
 </style>
