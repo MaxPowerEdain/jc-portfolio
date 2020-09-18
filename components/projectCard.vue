@@ -1,48 +1,75 @@
 <template>
 <nuxt-link :to="'/' + id">
-  <div class="projectCard">
-    <p class="t-header-small">{{ projectName }}</p>
-    <p class="t-body-primary">{{ projectDescription }}</p>
+  <article class="projectCard">
+    <p class="t-header-small projectName">{{ projectName }}</p>
+    <p class="t-body-primary projectDescription">{{ projectDescription }}</p>
     <div class="projectCardImage"></div>
-  </div>
+  </article>
 </nuxt-link>
 </template>
 
 <script>
+import style from '../assets/scss/variables.scss';
+
 export default {
   name: 'projectCard',
-  props: ['name', 'id', 'projectName', 'projectDescription']
+  props: ['name', 'id', 'projectName', 'projectDescription'],
+  mounted(){
+    const projectCards = document.querySelectorAll(".projectCard");
+    let colours = [];
+    for(let color in style){
+      colours.push(style[color]);
+    }
+
+    //iterates through the projectCards and assigns color from colour array
+    let i = 0;
+    projectCards.forEach(projectCardInstance => {
+      projectCardInstance.style.backgroundColor = colours[i%colours.length];
+      i++;
+    });
+  }
 }
 </script>
 
 <style lang="scss">
 .projectCard{
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: 30% 70%;
+  grid-template-areas: 
+    "projectCardImage projectName"
+    "projectCardImage projectDescription";
   width: 100%;
+  height: auto;
+  padding: 30px 30px;
   color: white;
   text-decoration: none;
-  display: grid;
-  grid-template-columns: subgrid;
-  grid-template-rows: subgrid;
-  background-color: green;
-}
-nuxt-link{
-  :hover{
-    text-decoration: none;
-    background-color: $secondary-light;
+  .projectCardImage{
+    width: 100px;
+    height: 75px;
+    background-color: grey;
+    grid-area: projectCardImage;
+    justify-self: center;
+    align-self: center;
+    @media (min-width: $breakpoint) {
+      width: 200px;
+      height: 150px;
+    }
+  }
+  .projectName{ 
+    grid-area: projectName;
+  }
+  .projectDescription{
+    grid-area: projectDescription;
   }
 }
-.projectCardImage{
-  background-color: grey;
-  height: 150px;
-  width: 250px;
-  grid-area: projectCardImage;
-}
+a{
+  text-decoration: none!important; //override Nuxt link underline on :hover
+  width: 100%;
+  //max-width: 90%;
 
-p:first-child{
-  grid-area: projectName;
-}
-
-p:nth-child(2){
-  grid-area: projectDescription;
+  :hover{
+    width: 100%!important;
+  }
 }
 </style>
