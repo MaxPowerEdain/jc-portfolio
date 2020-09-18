@@ -69,10 +69,25 @@ export default {
 </script>
 
 <style lang="scss">
+.projectCardTemplate{
+  display: grid;
+  grid-template-rows: 30% 70%;
+  height: auto;
+  width: 100%;
+}
+
 .projectCardTemplate:nth-child(odd){
-    text-align: right;
-  }
+  grid-template-columns: 70% 250px ;
+  text-align: right;
+  grid-template-areas: 
+    "projectName projectCardImage" 
+    "projectDescription projectCardImage";
+}
 .projectCardTemplate:nth-child(even){
-    color: green;
+  grid-template-columns: 250px 70%;
+  grid-template-areas: 
+    "projectCardImage projectName" 
+    "projectCardImage projectDescription";
+  color: green;
   }
 </style>

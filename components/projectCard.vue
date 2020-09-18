@@ -17,8 +17,13 @@ export default {
 
 <style lang="scss">
 .projectCard{
+  width: 100%;
   color: white;
   text-decoration: none;
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-template-rows: subgrid;
+  background-color: green;
 }
 nuxt-link{
   :hover{
@@ -27,8 +32,17 @@ nuxt-link{
   }
 }
 .projectCardImage{
-  background-color: white;
+  background-color: grey;
   height: 150px;
   width: 250px;
+  grid-area: projectCardImage;
+}
+
+p:first-child{
+  grid-area: projectName;
+}
+
+p:nth-child(2){
+  grid-area: projectDescription;
 }
 </style>
