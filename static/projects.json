@@ -4,27 +4,31 @@
     "name": "Suzuki Teaching Points Level 1",
     "description": "Small web app with scores and pedagogical explanation",
     "learning": "Simple HTML and CSS with some Javascript for button calls",
-    "problems": "Repeated code in the html files and the javascript, svg nightmare"
+    "problems": "Repeated code in the html files and the javascript, svg nightmare",
+    "url": ""
   },
   {
     "id": "project2",
     "name": "Edain Ranked",
     "description": "Dynamic web app using html, css and js frontend and AWS + MYSQL backend",
     "learning": "AWS common tecnologies like Lambda functions, API Gateway and Cognito User Pool",
-    "problems": "CSS code repeated without necessity, spaghetti js code, horrible frontend structure"
+    "problems": "CSS code repeated without necessity, spaghetti js code, horrible frontend structure",
+    "url": ""
   },
   {
     "id": "project3",
     "name": "JC Portfolio",
     "description": "Portfolio static web generated with Nuxt.js",
     "learning": "Vue.js and Nutx.js, along with proper and efficient project structure and management",
-    "problems": "Overkill?"
+    "problems": "Overkill?",
+    "url": ""
   },
   {
     "id": "project4",
     "name": "sdfsdfd",
     "description": "Dynsdfsdfsdfsdfsing html, css and js frontend and AWS + MYSQL backend",
     "learning": "Asdfsdfsdfsdognito User Pool",
-    "problems": "sasasdsd"
+    "problems": "sasasdsd",
+    "url": ""
   }
 ]

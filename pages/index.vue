@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <main>
     <homeSection/>
     <aboutSection/>
     <portfolioSection/>
     <div id="projectCardContainer">
-      <projectCard v-for="project in projects" 
+      <projectCard v-for="(project, index) in projects" :class="{'blue': index % 2 === 0}"
         :key="project.id" 
         :id="project.id" 
         :projectName="project.name"
@@ -12,7 +12,7 @@
       />
     </div>
     <contactSection/>
-  </div>
+  </main>
 </template>
 
 <script>
@@ -54,10 +54,16 @@ export default {
 </script>
 
 <style lang="scss">
-#projectCardContainer{
+main{
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+}
+
+#projectCardContainer{
+  width: 80%;
+  display: flex;
+  justify-self: center;
+  flex-direction: column;
 }
 </style>
