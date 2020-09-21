@@ -1,6 +1,6 @@
 <template>
 <section id="portfolio">
-  <h2 class="t-header">Portfolio</h2>
+  <h2 class="t-header">Portfolio.</h2>
   <p class="t-body-primary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga tempora perspiciatis molestiae, laborum, porro maiores vero dolorum nobis rerum veniam quas voluptate! Voluptatibus laudantium reiciendis eligendi corrupti deserunt ipsum enim.</p>
 </section>
 </template>

@@ -55,6 +55,7 @@ export default {
 <style lang="scss">
 #nav-bar-wrapper{
   position: sticky;
+  z-index: 500;
   top: 0;
   background-color: $primary-light;
   color: white;

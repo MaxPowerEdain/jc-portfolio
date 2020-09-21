@@ -1,15 +1,15 @@
 <template>
 <div>
-  <svg height="2" width="700">
-    <line x1="0" y1="0" x2="700" y2="0" style="stroke:rgb(255,0,0);stroke-width:3" />
-  </svg>
+  <hr 
+    :style="cardMainColor" 
+    :class="isEven ? 'barEven' : 'barOdd'">
   <article class="projectCard">
     <section class="projectCardDetails">
       <p class="t-header-small projectName">{{ projectName }}</p>
       <p class="t-body-primary projectDescription">{{ projectDescription }}</p>
       <section class="projectLinks">
-        <nuxt-link :to="'/' + id" class="t-button">Details</nuxt-link>
-        <nuxt-link :to="'/' + id" class="t-button">Visit</nuxt-link>
+        <nuxt-link :to="'/' + id" class="t-button" :style="linkMainColor">Details</nuxt-link>
+        <nuxt-link :to="'/' + id" class="t-button" :style="linkSecondaryColor">Visit</nuxt-link>
       </section>
     </section>
     <div class="projectCardImage"></div>
@@ -20,7 +20,30 @@
 <script>
 export default {
   name: 'projectCard',
-  props: ['name', 'id', 'projectName', 'projectDescription']
+  props: ['name', 'id', 'projectName', 'projectDescription', 'indexBasedStyle', 'isEven'],
+  computed: {
+    cardMainColor(){
+      return {
+        border: `1px solid ${this.indexBasedStyle.main}`
+      }
+    },
+    cardSecondaryColor(){
+      return {
+        border: `1px solid ${this.indexBasedStyle.secondary}`
+      }
+    },
+    linkMainColor(){
+      return {
+        'border-bottom': `2px solid ${this.indexBasedStyle.main}`
+      }
+    },
+    linkSecondaryColor(){
+      return {
+        'border-bottom': `2px solid ${this.indexBasedStyle.secondary}`
+      }
+    }
+
+  }
 }
 </script>
 
@@ -62,8 +85,29 @@ export default {
   }
 }
 
+.barEven{
+  width: 50%;
+  text-align: left;
+  margin-left: 10%;
+}
+
+.barOdd{
+  width: 50%;
+  text-align: right;
+  margin-right: 10%;
+}
+
+.barOdd, .barEven {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  @media (min-width: $breakpoint) {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+}
 
 a{
   text-decoration: none!important; //override Nuxt link underline on :hover
+  padding-bottom: 10px;
 }
 </style>

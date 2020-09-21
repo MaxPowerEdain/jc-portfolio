@@ -4,11 +4,13 @@
     <aboutSection/>
     <portfolioSection/>
     <div id="projectCardContainer">
-      <projectCard v-for="(project, index) in projects" :class="{'blue': index % 2 === 0}"
+      <projectCard v-for="(project, index) in projects"
         :key="project.id" 
         :id="project.id" 
         :projectName="project.name"
         :projectDescription="project.description"
+        :indexBasedStyle="projectColorStyles[index % 3]"
+        :isEven="index % 2 === 0"
       />
     </div>
     <contactSection/>
@@ -22,6 +24,7 @@ import homeSection from '../components/homeSection';
 import aboutSection from '../components/aboutSection';
 import portfolioSection from '../components/portfolioSection';
 import contactSection from '../components/contactSection';
+import colorStyles from '../assets/scss/variables.scss';
 
 export default {
   components: {
@@ -33,7 +36,20 @@ export default {
   },
   data() {
     return {
-      projects: []
+      projects: [],
+      projectColorStyles: [
+      {
+        main: colorStyles.accentBright,
+        secondary: colorStyles.accentColor
+      },
+      {
+        main: colorStyles.primaryLight,
+        secondary: colorStyles.primaryDark
+      },
+      {
+        main: colorStyles.secondaryLight,
+        secondary: colorStyles.secondaryDark
+      }]
     }
   },
   created() {
