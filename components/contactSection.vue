@@ -40,12 +40,19 @@ export default {
 }
 
 #contactTitleDecoration{
-  width: 218px;
-  height: 18px;
+  width: 106px;
+  height: 10px;
   background-color: $secondary-dark;
   transform: skew(-50deg);
   position: absolute;
-  top: 140px;
-  left: -13px;
+  top: 120px;
+  left: -6px;
+
+  @media (min-width: $breakpoint) {
+    width: 218px;
+    height: 18px;
+    top: 140px;
+    left: -13px;
+  }
 }
 </style>

@@ -4,7 +4,7 @@
     <div id="portfolioTitleDecoration"></div>
     <h2 class="t-header">Portfolio<span>.</span></h2>
   </div>
-  <p class="t-body-primary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga tempora perspiciatis molestiae, laborum, porro maiores vero dolorum nobis rerum veniam quas voluptate! Voluptatibus laudantium reiciendis eligendi corrupti deserunt ipsum enim.</p>
+  <p class="t-body-primary">I love learning by doing, and this projects have fueled my motivation to discover new tecnologies and become a better developer.</p>
 </section>
 </template>
 
@@ -38,12 +38,19 @@ export default {
 }
 
 #portfolioTitleDecoration{
-  width: 275px;
-  height: 18px;
+  width: 135px;
+  height: 10px;
   background-color: $secondary-light;
   transform: skew(-50deg);
   position: absolute;
-  top: 140px;
-  left: -13px;
+  top: 120px;
+  left: -6px;
+
+  @media (min-width: $breakpoint){
+    width: 275px;
+    height: 18px;
+    top: 140px;
+    left: -13px;
+  }
 }
 </style>

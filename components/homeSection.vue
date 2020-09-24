@@ -4,7 +4,7 @@
     <div id="titleDecoration"></div>
     <h1 class="t-header">Joan Carazo - developer<span>.</span></h1>
   </div>
-  <p class="t-body-primary">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat eveniet asperiores dignissimos, illum quae dolores sit delectus! Aliquam vel possimus non ex dolore, enim quisquam, beatae sunt odio iste voluptatem.</p>
+  <p class="t-body-bigger">I build user interfaces using Vue.js, Sass, Js and UE4/C++.<br>I love Agile development, Lean principles and component-driven design</p>
 </section>
 </template>
 
@@ -19,6 +19,7 @@ export default {
   background: $primary-gradient;
   color: white;
   height: 95vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,7 +27,7 @@ export default {
 
 #home h1{
   position: relative;
-  margin: 100px 0px; //TODO replace with responsive units
+  margin: 100px 30px; //TODO replace with responsive units
   font-size: 36px; //TODO probably move to text-global.scss
   @media (min-width: $breakpoint) {
     font-size: 64px
@@ -38,7 +39,7 @@ export default {
 }
 
 #home p{
-  width: 50%; //TODO finetune value
+  width: 70%; //TODO finetune value
 }
 
 #titleContainer{
@@ -46,12 +47,19 @@ export default {
 }
 
 #titleDecoration{
-  width: 445px;
-  height: 18px;
+  width: 250px;
+  margin: 0 30px;
+  height: 10px;
   background-color: $secondary-dark;
   transform: skew(-50deg);
   position: absolute;
-  top: 153px;
+  top: 130px;
   left: -5px;
+
+  @media(min-width: $breakpoint){
+    width: 445px;
+    height: 18px;
+    top: 153px;
+  }
 }
 </style>

@@ -1,14 +1,21 @@
 <template>
-  <div>
+  <div id="projectPage">
     <h1 class="t-header">{{ project.name }}</h1>
     <p class="t-body-primary">{{ project.description }}</p>
-    <p class="t-body-primary">{{ project.learning }}</p>
-    <p class="t-body-primary">{{ project.problems }}</p>
+    <projectFeature v-for="(feature, index) in project.features"
+    :key="index"
+    :name = feature.name
+    :text = feature.text
+    :image = feature.image
+    />
+    <p class="t-body-primary projectLearning">{{ project.learning }}</p>
+    <p class="t-body-primary projectProblems">{{ project.problems }}</p>
   </div>
 </template>
 
 <script>
 import projectsJSON from '../../static/projects.json';
+import projectFeature from '../../components/projectFeature';
 
 export default {
   head(){
@@ -22,6 +29,9 @@ export default {
       ]
     }
   },
+  components: {
+    projectFeature
+  },
   data() {
     return {
       project: {}
@@ -34,6 +44,46 @@ export default {
 
 </script>
 
-<style>
+<style lang="scss">
+
+#projectPage{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1{
+    width: 80%;
+    margin: 50px 0;
+    text-align: center;
+  }
+
+  p{
+    width: 80%;
+  }
+}
+
+.projectLearning{
+  display: flex;
+  align-self: flex-end;
+  background-color: $secondary-dark;
+  color: white;
+  width: 75%;
+  justify-content: flex-start;
+  text-align: left;
+  padding: 20px 40px;
+  margin: 0;
+}
+
+.projectProblems{
+  display: flex;
+  align-self: flex-start;
+  background-color: $accent-color;
+  color: white;
+  width: 75%;
+  justify-content: flex-end;
+  text-align: right;
+  padding: 20px 40px;
+  margin: 0;
+}
 
 </style>
