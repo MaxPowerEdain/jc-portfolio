@@ -9,6 +9,7 @@
         :id="project.id" 
         :projectName="project.name"
         :projectDescription="project.description"
+        :projectImage="project.image"
         :indexBasedStyle="projectColorStyles[index % 3]"
         :isEven="index % 2 === 0"
       />

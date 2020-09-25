@@ -12,7 +12,7 @@
         <nuxt-link :to="'/' + id" class="t-button" :style="linkSecondaryColor">Visit</nuxt-link>
       </section>
     </section>
-    <div class="projectCardImage"></div>
+    <img :src="getImageURL(projectImage)" :alt="projectImage" class="projectCardImage">
   </article>
 </div>
 </template>
@@ -20,7 +20,7 @@
 <script>
 export default {
   name: 'projectCard',
-  props: ['name', 'id', 'projectName', 'projectDescription', 'indexBasedStyle', 'isEven'],
+  props: ['name', 'id', 'projectName', 'projectDescription', 'projectImage', 'indexBasedStyle', 'isEven'],
   computed: {
     cardMainColor(){
       return {
@@ -41,8 +41,13 @@ export default {
       return {
         'border-bottom': `2px solid ${this.indexBasedStyle.secondary}`
       }
+    },
+    mounted(){
+      getImageURL(image){
+        var images = require.context('../assets/', false, /\.png$/);
+        return images('./' + image + ".png");
+      }
     }
-
   }
 }
 </script>
@@ -59,8 +64,6 @@ export default {
   grid-row: 1 / 2;
   height: 150px;
   width: 250px;
-  background-color: grey;
-  border: 1px solid black;
   justify-self: end;
   margin: 30px;
   @media (min-width: $breakpoint) {

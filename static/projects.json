@@ -9,6 +9,7 @@
       {"name": "Feature", "text": "text placeholder", "image": "image placeholder"}
     ],"learning": "I learned simple HTML and CSS, with a bit of Javascript for the SVG interface. I also practised prototyping in Adobe Illustrator",
     "problems": "The code is redundant, each html file has a big css file that could be shared between all pages. The javascript code could be simpler if it used functions and loops.",
+    "image": "suzuki-teaching-points.png",
     "url": ""
   },
   {
@@ -22,6 +23,7 @@
       {"name": "Chart library", "text": "In order to display statistics from the database, I decided to use a library to render data visually. I chose Chartist.js for their lightweight, svg-based library. It is easily customizable using CSS and its API is easy and simple to use.", "image": "image placeholder"}
     ],"learning": "This project was a big learning task. On the one hand, I learned more about HTML and CSS, designed and built SVG images for the UI, and used some basic JQuery. On the other hand, I needed to learn backend tecnologies such as Node.js, several AWS services and their APIs, and MYSQL for database queries.",
     "problems": "The frontend code is composed of CSS spaghettis and Js + JQuery spaghettis. There is a lot of unnecessary repetition, and the javascript code is not properly structured into separate files. Also, the loading times are very big because images are not optimized and the tables that display rankings and replays load all their items (+300!) at once.",
+    "image": "edain-ranked.png",
     "url": ""
   },
   {
@@ -34,6 +36,7 @@
       {"name": "Components", "text": "BFME's UI is complex. I fully realized it after building an entire menu using only 1 widget, which resulted in a lot of repetitive work and a nightmare widget tree. Also, the C++ class was handling way more functionalty than it should. Therefore, we decided to switch to component development, in order to agilize the work in the future and increase maintanabilty.", "image": "image placeholder"}
     ],"learning": "Vue.js and Nutx.js, along with proper and efficient project structure and management",
     "problems": "Overkill?",
+    "image": "bfme-reforged.png",
     "url": ""
   },
   {
@@ -47,6 +50,7 @@
     ],
     "learning": "Learning a bit of Dart was interesting, because it is type safe and therefore I grew more aware of types, how we use them in programming, and the differences between types in Dart, Javascript, or C family languages.",
     "problems": "The development was blocked because Firebase's implementation keep throwing errors constantly. Besides that, the code is written in a single file, which is not ideal even for a relatively small app. Flutter's widget trees can grow quickly and turn in a nested mess of UI elements, classes, methods, etc.",
+    "image": "suzuki-teaching-points.png",
     "url": ""
   },
   {
@@ -60,6 +64,7 @@
     ],
     "learning": "Vue.js has been my first Frontend framework, and I loved using it. I also learned to implement Bootstrap-Vue and Sass using Nuxt.js, which is very useful and saved much development time, while helping me to organize the style code better",
     "problems": "",
+    "image": "vuejs-portfolio.png",
     "url": ""
   }
 ]
