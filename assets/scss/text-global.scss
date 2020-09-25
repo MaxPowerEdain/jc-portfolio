@@ -1,3 +1,11 @@
+.t-header-main{
+  font-family: $header-font;
+  font-size: 36px;
+  @media (min-width: $breakpoint) {
+    font-size: 64px
+  }
+}
+
 .t-header{
   font-family: $header-font;
   font-size: 24px;
@@ -9,8 +17,10 @@
 .t-header-small{
   font-family: $header-font;
   font-size: 18px;
+  text-align: center;
   @media (min-width: $breakpoint) {
     font-size: 22px;
+    text-align: left;
   }
 }
 

@@ -1,5 +1,5 @@
 <template>
-  <div id="projectPage">
+  <div id="project-page" class="flex-centered-column">
     <h1 class="t-header">{{ project.name }}</h1>
     <p class="t-body-primary">{{ project.description }}</p>
     <projectFeature v-for="(feature, index) in project.features"
@@ -8,8 +8,8 @@
     :text = feature.text
     :image = feature.image
     />
-    <p class="t-body-primary projectLearning">{{ project.learning }}</p>
-    <p class="t-body-primary projectProblems">{{ project.problems }}</p>
+    <p class="t-body-primary project-learning project-bottom-blocks">{{ project.learning }}</p>
+    <p class="t-body-primary project-problems project-bottom-blocks">{{ project.problems }}</p>
   </div>
 </template>
 
@@ -46,10 +46,7 @@ export default {
 
 <style lang="scss">
 
-#projectPage{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+#project-page{
 
   h1{
     width: 80%;
@@ -58,32 +55,30 @@ export default {
   }
 
   p{
-    width: 80%;
+    width: 60%;
   }
 }
 
-.projectLearning{
-  display: flex;
+.project-learning{
   align-self: flex-end;
   background-color: $secondary-dark;
-  color: white;
-  width: 75%;
   justify-content: flex-start;
   text-align: left;
-  padding: 20px 40px;
-  margin: 0;
 }
 
-.projectProblems{
-  display: flex;
+.project-problems{
   align-self: flex-start;
   background-color: $accent-color;
-  color: white;
-  width: 75%;
   justify-content: flex-end;
   text-align: right;
-  padding: 20px 40px;
-  margin: 0;
+}
+
+.project-bottom-blocks{
+  display: flex;
+  color: white; 
+  width: 75%; 
+  padding: 20px 40px; 
+  margin: 0; 
 }
 
 </style>

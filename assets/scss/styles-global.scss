@@ -1,0 +1,29 @@
+.titles-decoration {
+  transform: skew(-50deg);
+  position: absolute;
+  height: 10px;
+
+  @media(min-width: $breakpoint){
+    height: 18px;
+  }
+}
+
+//all subtitles share the .titles-decoration config, plus the top-left values
+.subtitles-decoration {
+  top: 19px;
+  left: -6px;
+
+  @media (min-width: $breakpoint){
+    top: 40px;
+    left: -13px;
+  }
+}
+
+.title-container{
+  position: relative;
+  margin: 50px 0 35px;
+
+  @media (min-width: $breakpoint){
+    margin: 100px 0 50px;
+  }
+}

@@ -1,10 +1,14 @@
 <template>
-<section id="contact">
-  <div id="contactTitleContainer">
-    <div id="contactTitleDecoration"></div>
+<section id="contact" class="flex-centered-column">
+  <div class="title-container">
+    <div id="contact-title-decoration" class="titles-decoration subtitles-decoration"></div>
     <h2 class="t-header">Contact<span>.</span></h2>
   </div>
-  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et corrupti voluptates odio incidunt deserunt earum a, neque nemo sunt? Nam quam magni debitis voluptatibus possimus corrupti assumenda sint praesentium! Excepturi?</p>
+  <div class="contact-icons">
+    <img src="~/assets/icons/email-icon.svg" alt="email">
+    <img src="~/assets/icons/github-icon.png" alt="github">
+    <img src="~/assets/icons/linkedin-icon.png" alt="linkedin">
+  </div>
 </section>
 </template>
 
@@ -18,13 +22,14 @@ export default {
 #contact{
   background: $primary-gradient;
   color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 100%;
+
+  .title-container{
+    margin: 50px 0!important;
+  }
 }
 
 #contact h2{
-  margin: 100px 0px; //TODO replace with responsive units
   position: relative;
   span{
     color: $accent-color;
@@ -35,24 +40,31 @@ export default {
   width: 50%; //TODO finetune value
 }
 
-#contactTitleContainer{
-  position: relative;
-}
-
-#contactTitleDecoration{
+#contact-title-decoration{
   width: 106px;
-  height: 10px;
   background-color: $secondary-dark;
-  transform: skew(-50deg);
-  position: absolute;
-  top: 120px;
-  left: -6px;
 
   @media (min-width: $breakpoint) {
     width: 218px;
-    height: 18px;
-    top: 140px;
-    left: -13px;
+  }
+}
+
+.contact-icons{
+  display: flex;
+
+  img{
+    margin: 0px 15px 50px;
+    height: 20px;
+     width: 20px;
+    @media(min-width: $breakpoint){
+      margin: 25px 20px 75px;
+      height: 30px;
+      width: 30px;
+    }
+  }
+
+  img:hover{
+    opacity: 70%;
   }
 }
 </style>

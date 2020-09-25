@@ -1,7 +1,7 @@
 <template>
-  <div class="projectFeature">
+  <div class="project-feature">
     <p class="t-header-small">{{ name }}</p>
-    <div class="projectFeatureImage">{{ image }}</div> 
+    <div class="project-feature-image">{{ image }}</div> 
     <p class="t-body-primary">{{ text }}</p>
   </div>
 </template>
@@ -15,7 +15,7 @@ export default {
 
 <style lang="scss">
 
-.projectFeature{
+.project-feature{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,7 +33,7 @@ export default {
   width: 60%;
   }
 
-  .projectFeatureImage{
+  .project-feature-image{
     grid-column: 1 / 2;
     grid-row: 1 / 3;
     background-color: grey;

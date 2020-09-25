@@ -1,18 +1,16 @@
 <template>
-<div>
+<div class="flex-centered-column">
   <hr 
     :style="cardMainColor" 
     :class="isEven ? 'barEven' : 'barOdd'">
-  <article class="projectCard">
-    <section class="projectCardDetails">
-      <p class="t-header-small projectName">{{ projectName }}</p>
-      <p class="t-body-primary projectDescription">{{ projectDescription }}</p>
-      <section class="projectLinks">
-        <nuxt-link :to="'/' + id" class="t-button" :style="linkMainColor">Details</nuxt-link>
-        <nuxt-link :to="'/' + id" class="t-button" :style="linkSecondaryColor">Visit</nuxt-link>
-      </section>
+  <article class="projectCard flex-centered-column">
+    <p class="t-header-small projectName">{{ projectName }}</p>
+    <img :src="require('~/assets/images/' + projectImage)" :alt="projectImage" class="projectCardImage">
+    <p class="t-body-primary projectDescription">{{ projectDescription }}</p>
+    <section class="projectLinks">
+      <nuxt-link :to="'/' + id" class="t-button" :style="linkMainColor">Details</nuxt-link>
+      <nuxt-link :to="'/' + id" class="t-button" :style="linkSecondaryColor">Visit</nuxt-link>
     </section>
-    <img :src="getImageURL(projectImage)" :alt="projectImage" class="projectCardImage">
   </article>
 </div>
 </template>
@@ -42,33 +40,33 @@ export default {
         'border-bottom': `2px solid ${this.indexBasedStyle.secondary}`
       }
     },
-    mounted(){
-      getImageURL(image){
-        var images = require.context('../assets/', false, /\.png$/);
-        return images('./' + image + ".png");
-      }
-    }
   }
 }
 </script>
 
 <style lang="scss">
 .projectCard{
-  display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 100%;
+
+  width: 80%;
+
+  @media (min-width: $breakpoint){
+    display: grid!important;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 75px 1fr 75px;
+  }
 }
 
 .projectCardImage{
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-  height: 150px;
+  height: 140px;
   width: 250px;
   justify-self: end;
   margin: 30px;
+  
   @media (min-width: $breakpoint) {
-    height: 250px;
-    width: 400px;
+    height: 281px;
+    width: 500px;
+    grid-column: 1 / 2;
+    grid-row: 1 / 4;
   }
 }
 
@@ -82,6 +80,7 @@ export default {
 .projectLinks{
   display: flex;
   justify-content: flex-end;
+
   a{
     color: black;
     margin: 15px;
@@ -89,18 +88,17 @@ export default {
 }
 
 .barEven{
-  width: 50%;
   text-align: left;
   margin-left: 10%;
 }
 
 .barOdd{
-  width: 50%;
   text-align: right;
   margin-right: 10%;
 }
 
 .barOdd, .barEven {
+  width: 50%;
   margin-top: 50px;
   margin-bottom: 50px;
   @media (min-width: $breakpoint) {

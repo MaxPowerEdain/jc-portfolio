@@ -63,7 +63,9 @@ export default {
   styleResources: {
     scss: [
         '~/assets/scss/variables.scss',
-        '~/assets/scss/text-global.scss'
+        '~/assets/scss/text-global.scss',
+        '~/assets/scss/styles-global.scss',
+        '~/assets/scss/layouts-global.scss'
     ]
 }
 }

@@ -1,9 +1,9 @@
 <template>
-  <main>
+  <main class="flex-centered-column">
     <homeSection/>
     <aboutSection/>
     <portfolioSection/>
-    <div id="projectCardContainer">
+    <div id="project-card-container" class="flex-centered-column side-margin-big">
       <projectCard v-for="(project, index) in projects"
         :key="project.id" 
         :id="project.id" 
@@ -71,16 +71,9 @@ export default {
 </script>
 
 <style lang="scss">
-main{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
+#project-card-container{
+  margin-bottom: 100px;
 }
 
-#projectCardContainer{
-  width: 80%;
-  display: flex;
-  justify-self: center;
-  flex-direction: column;
-}
 </style>
