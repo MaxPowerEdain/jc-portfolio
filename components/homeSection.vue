@@ -1,10 +1,13 @@
 <template>
 <section id="home" class="flex-centered-column">
   <div id="title-container">
-    <div id="title-decoration" class="titles-decoration"></div>
-    <h1 class="t-header-main">Joan Carazo - developer<span>.</span></h1>
+    <div id="title-decorated-container">
+      <div id="title-decoration" class="titles-decoration"></div>
+      <h1 class="t-header-main">Joan Carazo</h1>
+    </div>
+    <h1 class="t-header-main">&nbsp;-&nbsp;developer<span>.</span></h1>
   </div>
-  <p class="t-body-bigger">I build user interfaces using Vue.js, Sass, Js and UE4/C++.<br>I love Agile development, Lean principles and component-driven design</p>
+  <p class="t-body-bigger">I build user interfaces using Vue.js, Sass, Js and UE4/C++.<br>I love Agile development, Lean principles and component-driven design.</p>
 </section>
 </template>
 
@@ -22,8 +25,17 @@ export default {
   width: 100%;
 }
 
+#title-container{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 25vh 10vw 10vh;
+  text-align: center;
+  justify-content: center;
+}
+
 #home h1{
   position: relative;
+  display: inline;
 
   span{
     color: $secondary-dark;
@@ -31,12 +43,12 @@ export default {
 }
 
 #home p{
-  width: 70%; //TODO finetune value
+  width: 60%; //TODO finetune value
 }
 
-#title-container{
+#title-decorated-container{
   position: relative;
-  margin: 100px 30px; //TODO replace with responsive units
+  display: inline;
 }
 
 #title-decoration{

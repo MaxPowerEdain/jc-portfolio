@@ -24,7 +24,7 @@ export default {
 }
 
 #portfolio p{
-  width: 50%; //TODO finetune value, maybe move to variables if all use same width
+  margin: 0 $margin-regular;
 }
 
 #portfolio-title-decoration{

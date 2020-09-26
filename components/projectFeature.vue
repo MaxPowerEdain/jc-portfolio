@@ -19,18 +19,13 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 90%;
-  margin: 30px 0;
-
-  p{
-    margin-left: 20px;
-  }
+  margin: 50px 0;
 
   @media (min-width: $breakpoint){
     display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: 30% 70%;
-  width: 60%;
+  width: 70%;
   }
 
   .project-feature-image{

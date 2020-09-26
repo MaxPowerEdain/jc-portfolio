@@ -8,7 +8,7 @@
         :key="project.id" 
         :id="project.id" 
         :projectName="project.name"
-        :projectDescription="project.description"
+        :projectIntro="project.intro"
         :projectImage="project.image"
         :indexBasedStyle="projectColorStyles[index % 3]"
         :isEven="index % 2 === 0"
@@ -40,12 +40,12 @@ export default {
       projects: [],
       projectColorStyles: [
       {
-        main: colorStyles.accentBright,
-        secondary: colorStyles.accentColor
-      },
-      {
         main: colorStyles.primaryLight,
         secondary: colorStyles.primaryDark
+      },
+      {
+        main: colorStyles.accentBright,
+        secondary: colorStyles.accentColor
       },
       {
         main: colorStyles.secondaryLight,

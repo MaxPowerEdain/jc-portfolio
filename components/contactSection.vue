@@ -36,10 +36,6 @@ export default {
   }
 }
 
-#contact p{
-  width: 50%; //TODO finetune value
-}
-
 #contact-title-decoration{
   width: 106px;
   background-color: $secondary-dark;

@@ -8,8 +8,12 @@
     :text = feature.text
     :image = feature.image
     />
-    <p class="t-body-primary project-learning project-bottom-blocks">{{ project.learning }}</p>
-    <p class="t-body-primary project-problems project-bottom-blocks">{{ project.problems }}</p>
+    <p class="t-body-primary project-learning project-bottom-blocks">
+      <span class="t-header-small">Learning: </span> {{ project.learning }}
+    </p>
+    <p class="t-body-primary project-problems project-bottom-blocks">
+      <span class="t-header-small">Problems: </span>{{ project.problems }}
+    </p>
   </div>
 </template>
 
@@ -49,13 +53,12 @@ export default {
 #project-page{
 
   h1{
-    width: 80%;
     margin: 50px 0;
     text-align: center;
   }
 
   p{
-    width: 60%;
+    margin: 0 $margin-regular;
   }
 }
 
@@ -74,11 +77,14 @@ export default {
 }
 
 .project-bottom-blocks{
-  display: flex;
   color: white; 
-  width: 75%; 
+  width: 100%; 
   padding: 20px 40px; 
-  margin: 0; 
+  margin: 0!important;
+
+  @media(min-width: $breakpoint){
+    width: 75%;
+  }
 }
 
 </style>

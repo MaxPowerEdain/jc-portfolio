@@ -16,10 +16,10 @@
 
 .t-header-small{
   font-family: $header-font;
-  font-size: 18px;
+  font-size: 22px;
   text-align: center;
   @media (min-width: $breakpoint) {
-    font-size: 22px;
+    font-size: 26px;
     text-align: left;
   }
 }

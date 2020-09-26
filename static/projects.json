@@ -2,61 +2,53 @@
   {
     "id": "project1",
     "name": "Suzuki Teaching Points",
-    "description": "When I was told that I had to make yet another written assignment during my Suzuki violin teaching course, I knew using a traditional word/pdf document with some images was not what I wanted. So I researched and decided to build an interactive web app to display the music scores and the pedagogical analysis on top of them.",
+    "intro": "When I was told that I had to make yet another written assignment during my Suzuki violin teaching course, I knew using a traditional word/pdf document with some images was not what I wanted. So I researched and decided to build an interactive web app to display the music scores and the pedagogical analysis on top of them.",
+    "description": "This static site displays the scores from the Suzuki Violin Method books. A multi-layered, clickable SVG overlay holds the information on the piece structure and teaching points (also divided in right/left hands). The audio of the piece is also playable while looking at the score. Altough the site is built in  a very ineficient way, the result was very satisfactory and I look forward to rebuild the site using modern rendering template systems. Built using HTML, CSS and Javascript",
     "features": [
-      {"name": "SVG", "text": "text placeholder", "image": "image placeholder"},
-      {"name": "Feature", "text": "text placeholder", "image": "image placeholder"}, 
-      {"name": "Feature", "text": "text placeholder", "image": "image placeholder"}
-    ],"learning": "I learned simple HTML and CSS, with a bit of Javascript for the SVG interface. I also practised prototyping in Adobe Illustrator",
-    "problems": "The code is redundant, each html file has a big css file that could be shared between all pages. The javascript code could be simpler if it used functions and loops.",
+      {"name": "SVG", "text": "Vector graphics offer very interesting possibilities in web design. In this case, I took advantage of inline SVG shapes made in Adobe Illustrator, with click events added, to toogle visibility of each layer of content.", "image": "image placeholder"},
+      {"name": "Audio Playback", "text": "Studying the score while listening the recording is very enriching and sometimes necessary, and even better if you can have a look at the teaching points while doing so.", "image": "image placeholder"}
+    ],
+    "learning": "I learned simple HTML and CSS, with a bit of Javascript for the SVG interface. I also practised prototyping and SVG handling in Adobe Illustrator.",
+    "problems": "The code is redundant, since each html file has a big css file that could be shared between all pages. The javascript code could be much simpler if it used functions and loops. And the architecure is funny, actually each page contains all the image files, html, css, js, and even font files instead of actually having them all in a shared folder.",
     "image": "suzuki-teaching-points.png",
     "url": ""
   },
   {
     "id": "project2",
     "name": "Edain Ranked",
-    "description": "This was my first dynamic website, and it's building took months. I wanted to make a ranking site for an online game with replay storage. The app is hosted and built using Amazon Web Services, which was both a big challenge and lots of fun.",
+    "intro": "This was my first dynamic website, and it's building took months. I wanted to make a ranking site for an online game with replay storage. The app is hosted and built using Amazon Web Services, which was both a big challenge and lots of fun.",
+    "description": "This app works in a simple way: Players register, upload games between each other, and recieve an ELO score based on their wins/loses. Their games and replays get stored, and the page displays a ranking, a replay list (with download links) and statistics from all the games played. Future plans include multilingual support, a replay parser (kindly written and gifted by FG15), and a season system. Built using HTML, CSS, Javascript, JQuery, Chartist.js, Node.js and MYSQL.",
     "features": [
-      {"name": "Architecture", "text": "The frontend is hosted on S3 storage, which also stores the game replays. The REST API (using API Gateway) calls Lambda functions, which execute the server-side code that manages the MYSQL database. Cognito serves as user-management service.", "image": "image placeholder"},
-      {"name": "Lambda functions", "text": "Go serverless! Having a server running 24/7 seemed overkill for a website with fairly low traffic. Lambda functions run on request every time the API calls them. In this way, we can handle the database CRUD operations easily on demand. The lambda functions themselves are coded using Node.js", "image": "image placeholder"}, 
-      {"name": "MYSQL database", "text": "The database stores all persistent information, such as players and their ranking, maps, replays, and historical ranking results. Various queries handled from the Lambda functions save and retrieve data ready for use.", "image": "image placeholder"}, 
-      {"name": "Chart library", "text": "In order to display statistics from the database, I decided to use a library to render data visually. I chose Chartist.js for their lightweight, svg-based library. It is easily customizable using CSS and its API is easy and simple to use.", "image": "image placeholder"}
-    ],"learning": "This project was a big learning task. On the one hand, I learned more about HTML and CSS, designed and built SVG images for the UI, and used some basic JQuery. On the other hand, I needed to learn backend tecnologies such as Node.js, several AWS services and their APIs, and MYSQL for database queries.",
-    "problems": "The frontend code is composed of CSS spaghettis and Js + JQuery spaghettis. There is a lot of unnecessary repetition, and the javascript code is not properly structured into separate files. Also, the loading times are very big because images are not optimized and the tables that display rankings and replays load all their items (+300!) at once.",
+      {"name": "Architecture", "text": "The frontend is hosted on S3 storage, which also stores the game replays. The REST API (using AWS's API Gateway) calls Lambda functions, which execute the server-side code that manages the MYSQL database. Cognito serves as user-management service.", "image": "image placeholder"},
+      {"name": "Lambda functions", "text": "Go serverless! Having a server running 24/7 seemed overkill for a website with fairly low traffic. Lambda functions run on request every time the API calls them. In this way, we can handle the database CRUD operations easily on demand. The lambda functions themselves are coded using Node.js and its MYSQl library", "image": "image placeholder"}, 
+      {"name": "MYSQL database", "text": "The database stores all persistent information, such as players and their ranking, maps, replays, and historical ranking results. Various queries handled from the Lambda functions save and retrieve data.", "image": "image placeholder"}, 
+      {"name": "Chart library", "text": "In order to display statistics from the database, I decided to use a library to render data visually. I chose Chartist.js for their lightweight, svg-based library. It is easily customizable using CSS and its API is simple to use.", "image": "image placeholder"}
+    ],
+    "learning": "This project was a big task. On the one hand, I learned more about HTML and CSS, designed and built SVG images for the UI, and used a bit of JQuery. On the other hand, I needed to learn backend tecnologies such as Node.js, several AWS services and their APIs, and MYSQL for database queries.",
+    "problems": "The frontend code is composed of CSS spaghettis and Js + JQuery spaghettis. There is a lot of unnecessary repetition, and the javascript code is not properly structured into separate files. Also, the loading times are very big because images are not optimized. The tables that display rankings and replays load all their items (+300!) at once.",
     "image": "edain-ranked.png",
     "url": ""
   },
   {
     "id": "project3",
     "name": "BFME Reforged",
-    "description": "BFME Reforged is a fan-made remake in Unreal Engine 4 of the beloved classic 'The Lord of the Rings: The Battle for the Middle Earth' series. Learning C and C++ was very important for me as a begginer developer, and I worked hard to acquire the necessary skills that I would need in order to become a team member. Now, I work in the UI (mainly menus), where I design and organize the component development.",
+    "intro": "BFME Reforged is a fan-made remake in Unreal Engine 4 of the beloved classic 'The Lord of the Rings: The Battle for the Middle Earth' series. Learning C and C++ was very important for me as a begginer developer, and I worked hard to acquire the necessary skills that I would need in order to become a team member. Now, I work in the UI (mainly menus), where I design and organize the component development.",
+    "description": "",
     "features": [
       {"name": "UMG's powerful capabilities", "text": "UMG is UE4's UI system. We needed responsive and scalable items, I dived hard into UMG's tools to learn how to tile images, stretch them without losing quality/ratio, etc.", "image": "image placeholder"},
       {"name": "C++ base", "text": "The widgets have C++ parent classes that handle their behaviour and provide functionalty such as IP connections, networking, and database read/write operations.", "image": "image placeholder"}, 
       {"name": "Components", "text": "BFME's UI is complex. I fully realized it after building an entire menu using only 1 widget, which resulted in a lot of repetitive work and a nightmare widget tree. Also, the C++ class was handling way more functionalty than it should. Therefore, we decided to switch to component development, in order to agilize the work in the future and increase maintanabilty.", "image": "image placeholder"}
-    ],"learning": "Vue.js and Nutx.js, along with proper and efficient project structure and management",
+    ],
+    "learning": "Vue.js and Nutx.js, along with proper and efficient project structure and management",
     "problems": "Overkill?",
     "image": "bfme-reforged.png",
     "url": ""
   },
   {
-    "id": "project4",
-    "name": "F5 Notificator",
-    "description": "I was proposed to make a small Flutter app during my bootcamp, which turned into this small message/notification app. The goal was to send simple text notifications with a color that represented the urgency of the message. The app is not finished, the implementation of Firebase to handle notifiactions/messages is pending.",
-    "features": [
-      {"name": "Stateful/Stateless widgets", "text": "Flutter uses widgets to build entire applications. In order to improve performance, widgets are divided into stateless (therefore, not changing their appearance or content) or stateful (they are rebuilt each frame and update themselves based on a mutable state, which can hold variables, functions, etc.", "image": "image placeholder"},
-      {"name": "Material Design", "text": "Flutter has a very interesting and straightforward implementation of Google's Material Design system. It allows to build beautiful and responsive applications very fast and helps in designing/structuring UI/UX nicely.", "image": "image placeholder"}, 
-      {"name": "Shared Preferences", "text": "In order to save the name of each user, I used the Android's Shared Preferences to store the username after installation, and displaying it each time he/she sends a message.", "image": "image placeholder"}
-    ],
-    "learning": "Learning a bit of Dart was interesting, because it is type safe and therefore I grew more aware of types, how we use them in programming, and the differences between types in Dart, Javascript, or C family languages.",
-    "problems": "The development was blocked because Firebase's implementation keep throwing errors constantly. Besides that, the code is written in a single file, which is not ideal even for a relatively small app. Flutter's widget trees can grow quickly and turn in a nested mess of UI elements, classes, methods, etc.",
-    "image": "suzuki-teaching-points.png",
-    "url": ""
-  },
-  {
     "id": "project5",
     "name": "Developer Portfolio (this)",
-    "description": "I love building apps to solve my own problems/necessities, this portfolio is one of those apps. I wanted to use modern frameworks and display my ability to write clean, well organized and readable code. Since Vue.js is growing in demand and popularity, and offered a gentle learning curve. Vue allows component-based development,and with Nuxt.js I could build a static site with all the advantages of server-side rendering.",
+    "intro": "I love building apps to solve my own problems/necessities, this portfolio is one of those apps. I wanted to use modern frameworks and display my ability to write clean, well organized and readable code. Since Vue.js is growing in demand and popularity, and offered a gentle learning curve. Vue allows component-based development,and with Nuxt.js I could build a static site with all the advantages of server-side rendering.",
+    "description": "",
     "features": [
       {"name": "Hooks", "text": "Vue.js and Nuext.js have a concrete lifetime cycle, which hooks help to manage. This way, we can optimize the loading times by doing server calls before the page is rendered in the DOM, and call other methods once the page is loaded.", "image": "image placeholder"},
       {"name": "Fancy CSS", "text": "Although I am not super interested in CSS animations or complicated effects, I had fun building a small algorithm that changed the color of the Navigation Bar based on the scroll position in the main page.", "image": "image placeholder"}, 
@@ -65,6 +57,21 @@
     "learning": "Vue.js has been my first Frontend framework, and I loved using it. I also learned to implement Bootstrap-Vue and Sass using Nuxt.js, which is very useful and saved much development time, while helping me to organize the style code better",
     "problems": "",
     "image": "vuejs-portfolio.png",
+    "url": ""
+  },
+  {
+    "id": "project4",
+    "name": "F5 Notificator",
+    "intro": "I was proposed to make a small Flutter app during my bootcamp, which turned into this small message/notification app. The goal was to send simple text notifications with a color that represented the urgency of the message. The app is not finished, the implementation of Firebase to handle notifiactions/messages is pending.",
+    "description": "",
+    "features": [
+      {"name": "Stateful/Stateless widgets", "text": "Flutter uses widgets to build entire applications. In order to improve performance, widgets are divided into stateless (therefore, not changing their appearance or content) or stateful (they are rebuilt each frame and update themselves based on a mutable state, which can hold variables, functions, etc.", "image": "image placeholder"},
+      {"name": "Material Design", "text": "Flutter has a very interesting and straightforward implementation of Google's Material Design system. It allows to build beautiful and responsive applications very fast and helps in designing/structuring UI/UX nicely.", "image": "image placeholder"}, 
+      {"name": "Shared Preferences", "text": "In order to save the name of each user, I used the Android's Shared Preferences to store the username after installation, and displaying it each time he/she sends a message.", "image": "image placeholder"}
+    ],
+    "learning": "Learning a bit of Dart was interesting, because it is type safe and therefore I grew more aware of types, how we use them in programming, and the differences between types in Dart, Javascript, or C family languages.",
+    "problems": "The development was blocked because Firebase's implementation keep throwing errors constantly. Besides that, the code is written in a single file, which is not ideal even for a relatively small app. Flutter's widget trees can grow quickly and turn in a nested mess of UI elements, classes, methods, etc.",
+    "image": "f5-notificator.png",
     "url": ""
   }
 ]

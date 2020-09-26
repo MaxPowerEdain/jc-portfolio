@@ -6,7 +6,7 @@
   <article class="projectCard flex-centered-column">
     <p class="t-header-small projectName">{{ projectName }}</p>
     <img :src="require('~/assets/images/' + projectImage)" :alt="projectImage" class="projectCardImage">
-    <p class="t-body-primary projectDescription">{{ projectDescription }}</p>
+    <p class="t-body-primary projectDescription">{{ projectIntro }}</p>
     <section class="projectLinks">
       <nuxt-link :to="'/' + id" class="t-button" :style="linkMainColor">Details</nuxt-link>
       <nuxt-link :to="'/' + id" class="t-button" :style="linkSecondaryColor">Visit</nuxt-link>
@@ -18,16 +18,11 @@
 <script>
 export default {
   name: 'projectCard',
-  props: ['name', 'id', 'projectName', 'projectDescription', 'projectImage', 'indexBasedStyle', 'isEven'],
+  props: ['name', 'id', 'projectName', 'projectIntro', 'projectImage', 'indexBasedStyle', 'isEven'],
   computed: {
     cardMainColor(){
       return {
-        border: `1px solid ${this.indexBasedStyle.main}`
-      }
-    },
-    cardSecondaryColor(){
-      return {
-        border: `1px solid ${this.indexBasedStyle.secondary}`
+        'border-top': `2px solid ${this.indexBasedStyle.main}`
       }
     },
     linkMainColor(){
@@ -46,8 +41,7 @@ export default {
 
 <style lang="scss">
 .projectCard{
-
-  width: 80%;
+margin: 0 $margin-regular;
 
   @media (min-width: $breakpoint){
     display: grid!important;
@@ -67,6 +61,8 @@ export default {
     width: 500px;
     grid-column: 1 / 2;
     grid-row: 1 / 4;
+    align-self: flex-start;
+    margin: 15px 30px;
   }
 }
 
@@ -79,7 +75,11 @@ export default {
 
 .projectLinks{
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+
+  @media (min-width: $breakpoint){
+    justify-content: flex-end;
+  }
 
   a{
     color: black;
