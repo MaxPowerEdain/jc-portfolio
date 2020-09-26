@@ -24,17 +24,22 @@ export default {
 <style lang="scss">
 
 #about-container{
-  padding: 0 50px;
-  align-items: flex-start!important;
+  padding: 0 25px;
   @media (min-width: $breakpoint) {
+    padding: 0 50px;
     display: grid;
     grid-template-columns: 33% 33% 33%;
     justify-items: center;
+    align-items: flex-start;
   }
 
   span{
     text-align: left;
-    margin-bottom: 10px!important;
+    margin-bottom: 5px!important;
+
+    @media(min-width: $breakpoint){
+      margin-bottom: 10px!important;
+    }
   }
 }
 
@@ -59,6 +64,6 @@ export default {
     display: block;
     margin: 0;
   }
-  width: 75%; //TODO finetune value
+  width: 80%; //TODO finetune value
 }
 </style>
