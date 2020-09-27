@@ -2,12 +2,12 @@
 <div class="flex-centered-column">
   <hr 
     :style="cardMainColor" 
-    :class="isEven ? 'barEven' : 'barOdd'">
-  <article class="projectCard flex-centered-column">
-    <p class="t-header-small projectName">{{ projectName }}</p>
-    <img :src="require('~/assets/images/' + projectImage)" :alt="projectImage" class="projectCardImage">
-    <p class="t-body-primary projectDescription">{{ projectIntro }}</p>
-    <section class="projectLinks">
+    :class="isEven ? 'bar-even' : 'bar-odd'">
+  <article class="project-card flex-centered-column">
+    <p class="t-header-small">{{ projectName }}</p>
+    <img :src="require('~/assets/images/' + projectImage)" :alt="projectImage" class="project-card-image">
+    <p class="t-body-primary">{{ projectIntro }}</p>
+    <section class="project-links">
       <nuxt-link :to="'/' + id" class="t-button" :style="linkMainColor">Details</nuxt-link>
       <nuxt-link :to="'/' + id" class="t-button" :style="linkSecondaryColor">Visit</nuxt-link>
     </section>
@@ -40,7 +40,7 @@ export default {
 </script>
 
 <style lang="scss">
-.projectCard{
+.project-card{
 margin: 0 $margin-regular;
 
   @media (min-width: $breakpoint){
@@ -50,7 +50,7 @@ margin: 0 $margin-regular;
   }
 }
 
-.projectCardImage{
+.project-card-image{
   height: 140px;
   width: 250px;
   justify-self: end;
@@ -66,14 +66,14 @@ margin: 0 $margin-regular;
   }
 }
 
-.projectCardDetails{
+.project-card-details{
   grid-column: 2 / 3;
   grid-row: 1 / 2;
   padding: 30px;
   max-width: 450px;
 }
 
-.projectLinks{
+.project-links{
   display: flex;
   justify-content: center;
 
@@ -87,17 +87,17 @@ margin: 0 $margin-regular;
   }
 }
 
-.barEven{
+.bar-even{
   text-align: left;
   margin-left: 10%;
 }
 
-.barOdd{
+.bar-odd{
   text-align: right;
   margin-right: 10%;
 }
 
-.barOdd, .barEven {
+.bar-odd, .bar-even {
   width: 50%;
   margin-top: 50px;
   margin-bottom: 50px;

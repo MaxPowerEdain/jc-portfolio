@@ -1,7 +1,7 @@
 <template>
   <div class="project-feature">
     <p class="t-header-small">{{ name }}</p>
-    <div class="project-feature-image">{{ image }}</div> 
+    <img :src="require('~/assets/images/' + image)" :alt="name + ' image'" class="project-feature-image">
     <p class="t-body-primary">{{ text }}</p>
   </div>
 </template>
@@ -32,13 +32,14 @@ export default {
     grid-column: 1 / 2;
     grid-row: 1 / 3;
     background-color: grey;
-    height: 130px;
-    width: 130px;
+    height: 140px;
+    width: 250px;
     margin: 20px;
+    outline: 1px solid grey;
 
     @media (min-width: $breakpoint) {
-      height: 180px;
-      width: 180px;
+      height: 239px;
+      width: 425px;
     }
   }
 }
