@@ -36,11 +36,16 @@ export default {
     width: 250px;
     margin: 20px;
     outline: 1px solid grey;
+    transition: .2s;
 
     @media (min-width: $breakpoint) {
       height: 239px;
       width: 425px;
     }
+  }
+  
+  .project-feature-image:hover{
+    transform: scale(1.3);
   }
 }
 

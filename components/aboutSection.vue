@@ -6,7 +6,7 @@
   </div>
   <div id="about-container" class="flex-centered-column">
     <p class="t-body-primary"><span class="t-header-small">Before,</span>
-    I studied violin for 18 years in Valencia, Zaragoza and Vienna, following a carrear as teacher, freelance orchestral player and soloist. I developed discipline, endurance, self-learning skills, motivation, and improvement mindset.</p>
+    I studied violin for 18 years in Valencia, Zaragoza and Vienna, following a carrear as teacher and freelance player. I developed discipline, endurance, self-learning skills, motivation, and improvement mindset.</p>
     <p class="t-body-primary"><span class="t-header-small">Now,</span>
     I have finished a Frontend Bootcamp in Factoría F5, where I learned about Agile development, teamwork, and modern web-development tecnologies and tools. I continue gaining knowledge in their Fullstack Bootcamp. And I also strenghten my programming skills by coding C++ in UE4 as UI developer in the fan-project BFME Reforged.</p>
     <p class="t-body-primary"><span class="t-header-small">Next,</span>
