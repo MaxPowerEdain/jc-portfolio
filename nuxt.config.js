@@ -77,6 +77,7 @@ export default {
     ]
   },
   generate: {
+    dir: "dist",
     fallback: "404.html"
   },
 }
