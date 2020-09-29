@@ -16,7 +16,7 @@ export default {
   */
   target: 'static',
   router: {
-    base: '/jc-portfolio'
+    base: 'jc-portfolio/'
   },
   /*
   ** Headers of the page
