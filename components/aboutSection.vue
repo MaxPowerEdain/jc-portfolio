@@ -58,7 +58,7 @@ export default {
 }
 
 #about-title-decoration{
-  width: 124px;
+  width: 152px;
   background-color: $accent-bright;
 
   @media (min-width: $breakpoint) {

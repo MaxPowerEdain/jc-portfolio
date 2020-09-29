@@ -28,7 +28,7 @@ export default {
 }
 
 #portfolio-title-decoration{
-  width: 135px;
+  width: 170px;
   background-color: $secondary-light;
   transform: skew(-50deg);
 

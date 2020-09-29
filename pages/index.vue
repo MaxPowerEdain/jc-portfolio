@@ -12,6 +12,9 @@
         :projectImage="project.image"
         :indexBasedStyle="projectColorStyles[index % 3]"
         :isEven="index % 2 === 0"
+        :projectUrl="project.url"
+        :projectGitHub="project.github"
+        :projectAdditional="project.additional"
       />
     </div>
     <contactSection/>

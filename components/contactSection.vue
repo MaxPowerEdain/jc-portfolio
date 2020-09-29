@@ -4,7 +4,7 @@
     <div id="contact-title-decoration" class="titles-decoration subtitles-decoration"></div>
     <h2 class="t-header">Contact<span>.</span></h2>
   </div>
-  <div class="contact-icons">
+  <adress class="contact-icons">
     <a href="https://github.com/MaxPowerReforged">
       <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 32.6 31.8"  xml:space="preserve">
         <path d="M16.3,0C7.3,0,0,7.3,0,16.3c0,7.2,4.7,13.3,11.1,15.5c0.8,0.1,1.1-0.4,1.1-0.8c0-0.4,0-1.4,0-2.8
@@ -15,10 +15,10 @@
           C32.6,7.3,25.3,0,16.3,0z"/>
       </svg>
     </a>
-    <a href="">
+    <a href="mailto:joancarazo1994@gmail.com">
       <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="none"/><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
     </a>
-    <a href="">
+    <a href="https://www.linkedin.com/in/joan-carazo-a8ba62130/">
       <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128.88 129.6" fill="white">
         <path d="M0.03,120.21c0-37.27,0-74.53,0-111.8c0.19-0.04,0.23-0.18,0.24-0.35C0.4,6.13,1.29,4.56,2.54,3.12
           c1.39-1.61,3.22-2.45,5.16-3.1c37.83,0,75.66,0,113.48,0c0.08,0.08,0.14,0.21,0.23,0.22c2.67,0.48,4.5,2.13,6.01,4.26
@@ -38,7 +38,7 @@
           C34.82,39.8,39.74,35.03,39.61,28.75z"/>
       </svg>
     </a>
-  </div>
+  </adress>
 </section>
 </template>
 
@@ -67,7 +67,7 @@ export default {
 }
 
 #contact-title-decoration{
-  width: 106px;
+  width: 134px;
   background-color: $secondary-dark;
 
   @media (min-width: $breakpoint) {

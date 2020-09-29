@@ -9,7 +9,7 @@
     <p class="t-body-primary">{{ projectIntro }}</p>
     <section class="project-links">
       <nuxt-link :to="'/' + id" class="t-button" :style="linkMainColor">Details</nuxt-link>
-      <nuxt-link :to="'/' + id" class="t-button" :style="linkSecondaryColor">Visit</nuxt-link>
+      <a v-if="projectUrl" :href="projectUrl" class="t-button" :style="linkSecondaryColor">Visit</a>
     </section>
   </article>
 </div>
@@ -18,7 +18,7 @@
 <script>
 export default {
   name: 'projectCard',
-  props: ['name', 'id', 'projectName', 'projectIntro', 'projectImage', 'indexBasedStyle', 'isEven'],
+  props: ['name', 'id', 'projectName', 'projectIntro', 'projectImage', 'indexBasedStyle', 'isEven', 'projectUrl', 'projectGitHub', 'projectAdditionals'],
   computed: {
     cardMainColor(){
       return {

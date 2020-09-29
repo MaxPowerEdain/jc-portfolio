@@ -2,6 +2,11 @@
   <div id="project-page" class="flex-centered-column">
     <h1 class="t-header">{{ project.name }}</h1>
     <p class="t-body-primary">{{ project.description }}</p>
+    <iframe v-if="project.additional" width="560" height="315" src="https://www.youtube.com/embed/nUxWkpTr6F4?start=149" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <section class="project-links">
+      <a v-if="project.github" :href="project.github" class="t-button">Github</a>
+      <a v-if="project.url" :href="project.url" class="t-button">Visit</a>
+    </section>
     <projectFeature v-for="(feature, index) in project.features"
     :key="index"
     :name = feature.name
@@ -9,7 +14,7 @@
     :image = feature.image
     />
     <p class="t-body-primary project-learning project-bottom-blocks">
-      <span class="t-header-small">Learning: </span> {{ project.learning }}
+      <span class="t-header-small">Learning: </span>{{ project.learning }}
     </p>
     <p class="t-body-primary project-problems project-bottom-blocks">
       <span class="t-header-small">Problems: </span>{{ project.problems }}
@@ -85,6 +90,26 @@ export default {
   @media(min-width: $breakpoint){
     width: 75%;
   }
+}
+
+iframe{
+  margin: 50px;
+}
+
+.project-links{
+  margin: 50px 0;
+}
+
+.project-links a {
+  color: black;
+  text-decoration: none;
+  padding-bottom: 10px;
+  border-bottom: 2px solid $accent-bright;
+  margin: 0 10px;
+}
+
+.project-links a:nth-child(2){
+  border-bottom: 2px solid $secondary-dark;
 }
 
 </style>

@@ -17,8 +17,9 @@
     "learning": "I learned simple HTML and CSS, with a bit of Javascript for the SVG interface. I also practised prototyping and SVG handling in Adobe Illustrator.",
     "problems": "The code is redundant, since each html file has a big css file that could be shared between all pages. The javascript code could be much simpler if it used functions and loops. And the architecure is funny, actually each page contains all the image files, html, css, js, and even font files instead of actually having them all in a shared folder.",
     "image": "suzuki-teaching-points.png",
-    "url": "",
-    "github": ""
+    "url": "https://maxpowerreforged.github.io/Suzuki-Teaching-Points/Main/index.html",
+    "github": "https://github.com/MaxPowerReforged/Suzuki-Teaching-Points",
+    "additional": ""
   },
   {
     "id": "project2",
@@ -42,8 +43,9 @@
     "learning": "This project was a big task. On the one hand, I learned more about HTML and CSS, designed and built SVG images for the UI, and used a bit of JQuery. On the other hand, I needed to learn backend tecnologies such as Node.js, several AWS services and their APIs, and MYSQL for database queries.",
     "problems": "The frontend code is composed of CSS spaghettis and Js + JQuery spaghettis. There is a lot of unnecessary repetition, and the javascript code is not properly structured into separate files. Also, the loading times are very big because images are not optimized. The tables that display rankings and replays load all their items (+300!) at once.",
     "image": "edain-ranked.png",
-    "url": "",
-    "github": ""
+    "url": "http://edainranked.com",
+    "github": "https://github.com/MaxPowerReforged/Edain-Ranked-Website",
+    "additional": ""
   },
   {
     "id": "project3",
@@ -67,8 +69,9 @@
     "learning": "Using C++ in a big project has been very enriching in lots of aspects. Besides working with Object Oriented Programming, I research into UE4's documentation constantly, look at code written by others, and learn to colaborate with the other team members. Having more experienced developers review my code is also very helpful.",
     "problems": "The widget system can increase in complexity very fast. Also, OOP requires careful consideration of how code is structured, which I didn't do properly at the beggining.",
     "image": "bfme-reforged.png",
-    "url": "",
-    "github": ""
+    "url": "https://bfmereforged.org/",
+    "github": "",
+    "additional": "https://youtu.be/nUxWkpTr6F4?t=149"
   },
   {
     "id": "project4",
@@ -90,7 +93,8 @@
     "problems": "",
     "image": "vuejs-portfolio.png",
     "url": "",
-    "github": ""
+    "github": "https://github.com/MaxPowerReforged/jc-portfolio",
+    "additional": ""
   },
   {
     "id": "project5",
@@ -112,6 +116,7 @@
     "problems": "The development was blocked because Firebase's implementation keep throwing errors constantly. Besides that, the code is written in a single file, which is not ideal even for a relatively small app. Flutter's widget trees can grow quickly and turn in a nested mess of UI elements, classes, methods, etc.",
     "image": "f5-notificator.png",
     "url": "",
-    "github": ""
+    "github": "https://github.com/MaxPowerReforged/f5_notificator",
+    "additional": ""
   }
 ]
