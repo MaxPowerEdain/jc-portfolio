@@ -75,8 +75,8 @@ export default {
         '~/assets/scss/styles-global.scss',
         '~/assets/scss/layouts-global.scss'
     ]
-  }/* ,
+  },
   generate: {
     fallback: "404.html"
-  }, */
+  },
 }
