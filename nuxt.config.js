@@ -16,7 +16,7 @@ export default {
   */
   target: 'static',
   router: {
-    base: process.env.DEPLOY_ENV === 'STATIC' ? '/jc-portfolio/' : '/'
+    base: '/jc-portfolio/'
   },
   /*
   ** Headers of the page
