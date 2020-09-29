@@ -15,6 +15,9 @@ export default {
   ** See https://nuxtjs.org/api/configuration-target
   */
   target: 'static',
+  router: {
+    base: process.env.DEPLOY_ENV === 'STATIC' ? '/jc-portfolio/' : '/'
+  },
   /*
   ** Headers of the page
   ** See https://nuxtjs.org/api/configuration-head
@@ -72,5 +75,8 @@ export default {
         '~/assets/scss/styles-global.scss',
         '~/assets/scss/layouts-global.scss'
     ]
-}
+  },
+  generate: {
+    fallback: "404.html"
+  },
 }
