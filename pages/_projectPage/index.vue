@@ -4,8 +4,8 @@
     <p class="t-body-primary">{{ project.description }}</p>
     <iframe v-if="project.additional" width="560" height="315" src="https://www.youtube.com/embed/nUxWkpTr6F4?start=149" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <section class="project-links">
-      <a v-if="project.github" :href="project.github" class="t-button">Github</a>
-      <a v-if="project.url" :href="project.url" class="t-button">Visit</a>
+      <a v-if="project.github" :href="project.github" target="_blank" class="t-button">Github</a>
+      <a v-if="project.url" :href="project.url" target="_blank" class="t-button">Visit</a>
     </section>
     <projectFeature v-for="(feature, index) in project.features"
     :key="index"
@@ -72,6 +72,13 @@ export default {
   background-color: $secondary-dark;
   justify-content: flex-start;
   text-align: left;
+
+  @media (min-width: $breakpoint){
+    background-color: transparent;
+    background-image: url(../../assets/images/svg/learning-background.svg);
+    background-size: cover;
+    padding-left: 80px !important;
+  }
 }
 
 .project-problems{
@@ -79,13 +86,20 @@ export default {
   background-color: $accent-color;
   justify-content: flex-end;
   text-align: right;
+
+  @media(min-width: $breakpoint){
+    background-color: transparent;
+    background-image: url(../../assets/images/svg/problems-background.svg);
+    background-size: cover;
+    padding-right: 80px !important;
+  }
 }
 
 .project-bottom-blocks{
   color: white; 
   width: 100%; 
   padding: 20px 40px; 
-  margin: 0!important;
+  margin: 0 0 -1px !important;
 
   @media(min-width: $breakpoint){
     width: 75%;

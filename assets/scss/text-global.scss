@@ -1,6 +1,7 @@
 .t-header-main{
   font-family: $header-font;
   font-size: 36px;
+  user-select: none;
   @media (min-width: $breakpoint) {
     font-size: 64px
   }
@@ -9,6 +10,7 @@
 .t-header{
   font-family: $header-font;
   font-size: 30px;
+  user-select: none;
   @media (min-width: $breakpoint) {
     font-size: 48px;
   }
@@ -18,6 +20,7 @@
   font-family: $header-font;
   font-size: 22px;
   text-align: center;
+  user-select: none;
   @media (min-width: $breakpoint) {
     font-size: 26px;
     text-align: left;
@@ -35,6 +38,7 @@
 .t-button{
   font-family: $header-font;
   font-size: 16px;
+  user-select: none;
   @media (min-width: $breakpoint) {
     font-size: 18px;
   }

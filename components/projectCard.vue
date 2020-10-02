@@ -9,7 +9,7 @@
     <p class="t-body-primary">{{ projectIntro }}</p>
     <section class="project-links">
       <nuxt-link :to="'/' + id" class="t-button" :style="linkMainColor">Details</nuxt-link>
-      <a v-if="projectUrl" :href="projectUrl" class="t-button" :style="linkSecondaryColor">Visit</a>
+      <a v-if="projectUrl" :href="projectUrl" target="_blank" class="t-button" :style="linkSecondaryColor">Visit</a>
     </section>
   </article>
 </div>

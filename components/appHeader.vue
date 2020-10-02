@@ -21,13 +21,13 @@ export default {
   name: 'appHeader',
   mounted() {
     const navBar = document.querySelector('#nav-bar-wrapper');
-    const startColor = [18, 52, 141];
+    const initialColor = [18, 52, 141];
     const endColor = [4, 15, 87]; //todo pick from scss or background gradient
     let incrementArray = [];
 
     //calculates the increment/decrement between the two colors
     for(let i = 0; i < endColor.length; i++){
-      incrementArray.push(endColor[i] - startColor[i]);
+      incrementArray.push(endColor[i] - initialColor[i]);
     }
 
     window.addEventListener('scroll', () =>{
@@ -40,12 +40,12 @@ export default {
       let scrollRatioNav = (windowHeight - windowScrolled - navBarHeight * (1 - scrollRatio))/windowHeight;
       let newColor = [];
       for(let i = 0; i < incrementArray.length; i++){
-        newColor.push((1 - scrollRatioNav) * incrementArray[i] + startColor[i]);
+        newColor.push((1 - scrollRatioNav) * incrementArray[i] + initialColor[i]);
       }
       let [r, g, b] = newColor;
-      r = Math.max(endColor[0], Math.min(r, startColor[0]));
-      g = Math.max(endColor[1], Math.min(g, startColor[1]));
-      b = Math.max(endColor[2], Math.min(b, startColor[2]));
+      r = Math.max(endColor[0], Math.min(r, initialColor[0]));
+      g = Math.max(endColor[1], Math.min(g, initialColor[1]));
+      b = Math.max(endColor[2], Math.min(b, initialColor[2]));
       navBar.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
     });
   }

@@ -5,7 +5,7 @@
     <h2 class="t-header">Contact<span>.</span></h2>
   </div>
   <adress class="contact-icons">
-    <a href="https://github.com/MaxPowerReforged">
+    <a class="contact-link" href="https://github.com/MaxPowerReforged" target="_blank">
       <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 32.6 31.8"  xml:space="preserve">
         <path d="M16.3,0C7.3,0,0,7.3,0,16.3c0,7.2,4.7,13.3,11.1,15.5c0.8,0.1,1.1-0.4,1.1-0.8c0-0.4,0-1.4,0-2.8
           c-4.5,1-5.5-2.2-5.5-2.2c-0.7-1.9-1.8-2.4-1.8-2.4c-1.5-1,0.1-1,0.1-1c1.6,0.1,2.5,1.7,2.5,1.7c1.4,2.5,3.8,1.8,4.7,1.4
@@ -15,10 +15,11 @@
           C32.6,7.3,25.3,0,16.3,0z"/>
       </svg>
     </a>
-    <a href="mailto:joancarazo1994@gmail.com">
+    <div class="contact-link" id="email-button">
       <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="none"/><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-    </a>
-    <a href="https://www.linkedin.com/in/joan-carazo-a8ba62130/">
+      <span id="email-dropdown" class="t-nav">joancarazo1994@gmail.com</span>
+    </div>
+    <a class="contact-link" href="https://www.linkedin.com/in/joan-carazo-a8ba62130/" target='_blank'>
       <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128.88 129.6" fill="white">
         <path d="M0.03,120.21c0-37.27,0-74.53,0-111.8c0.19-0.04,0.23-0.18,0.24-0.35C0.4,6.13,1.29,4.56,2.54,3.12
           c1.39-1.61,3.22-2.45,5.16-3.1c37.83,0,75.66,0,113.48,0c0.08,0.08,0.14,0.21,0.23,0.22c2.67,0.48,4.5,2.13,6.01,4.26
@@ -44,7 +45,16 @@
 
 <script>
 export default {
-
+  mounted() {
+    document.querySelector('#email-button').addEventListener('click', () =>{
+      let dropdown = document.querySelector('#email-dropdown');
+      if(dropdown.style.display == 'none' || dropdown.style.display == '') dropdown.style.display = 'inline';
+      else dropdown.style.display = 'none';
+      dropdown.addEventListener('click', (event) => {
+        event.stopPropagation();
+      })
+    })
+  }
 }
 </script>
 
@@ -55,7 +65,7 @@ export default {
   width: 100%;
 
   .title-container{
-    margin: 50px 0 50px 25px!important; //left margin to avoid the impression that the title is not centered
+    margin: 50px 0 25px 25px!important; //left margin to avoid the impression that the title is not centered
   }
 }
 
@@ -79,9 +89,21 @@ export default {
   display: flex;
 
   .contact-icon{
+    height: 20px;
+    width: 20px;
+    
+    @media (min-width: $breakpoint) {
+      height: 30px;
+      width: 30px;
+    }
+  }
+
+  .contact-link{
+    cursor: default;
+    position: relative;
     margin: 0px 15px 50px;
     height: 20px;
-     width: 20px;
+    width: 20px;
     @media(min-width: $breakpoint){
       margin: 25px 20px 75px;
       height: 30px;
@@ -89,23 +111,41 @@ export default {
     }
   }
 
-  a{
-    cursor: default;
-  }
-
-  a:nth-child(1) .contact-icon:hover{
+  .contact-link:nth-child(1) .contact-icon:hover{
     fill: $secondary-dark;
     cursor: pointer;
   }
 
-  a:nth-child(2) .contact-icon:hover{
+  .contact-link:nth-child(2) .contact-icon:hover{
     fill: $accent-color;
     cursor: pointer;
   }
 
-  a:nth-child(3) .contact-icon:hover{
+  .contact-link:nth-child(3) .contact-icon:hover{
     fill: $accent-bright;
     cursor: pointer;
+  }
+
+  #email-dropdown{
+    display: none;
+    position: absolute;
+    color: white;
+    font-size: 18px;
+    top: 175%;
+    left: 50%;
+    transform: translate(-50%);
+    animation-name: email-animation;
+    animation-duration: 1.5s;
+    overflow: hidden;
+  }
+}
+
+@keyframes email-animation{
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
   }
 }
 </style>
