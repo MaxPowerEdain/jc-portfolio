@@ -1,7 +1,7 @@
 <template>
   <div class="project-feature">
     <p class="t-header-small">{{ name }}</p>
-    <img :src="require('~/assets/images/' + image)" :alt="name + ' image'" class="project-feature-image">
+    <img :src="require('~/assets/images/' + image)" :alt="name + ' image'" class="project-feature-image lazyload">
     <p class="t-body-primary">{{ text }}</p>
   </div>
 </template>

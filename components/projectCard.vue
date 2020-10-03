@@ -5,7 +5,7 @@
     :class="isEven ? 'bar-even' : 'bar-odd'">
   <article class="project-card flex-centered-column">
     <p class="t-header-small">{{ projectName }}</p>
-    <img :src="require('~/assets/images/' + projectImage)" :alt="projectImage" class="project-card-image">
+    <img :src="require('~/assets/images/' + projectImage)" :alt="projectImage" class="project-card-image lazyload">
     <p class="t-body-primary">{{ projectIntro }}</p>
     <section class="project-links">
       <nuxt-link :to="'/' + id" class="t-button" :style="linkMainColor">Details</nuxt-link>
