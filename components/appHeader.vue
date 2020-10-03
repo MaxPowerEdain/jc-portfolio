@@ -5,7 +5,7 @@
 
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav class="ml-auto t-nav text-right">
-        <b-nav-item to="/#home">Home</b-nav-item>
+        <b-nav-item to="/#top">Home</b-nav-item>
         <b-nav-item to="/#about">About Me</b-nav-item>
         <b-nav-item to="/#portfolio">Portfolio</b-nav-item>
         <b-nav-item to="/#contact">Contact</b-nav-item>
