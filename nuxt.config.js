@@ -61,7 +61,8 @@ export default {
   modules: [
     // Doc: https://bootstrap-vue.js.org
     'bootstrap-vue/nuxt',
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    'nuxt-responsive-loader'
   ],
   /*
   ** Build configuration
