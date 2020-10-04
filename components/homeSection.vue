@@ -7,7 +7,7 @@
     </div>
     <h1 class="t-header-main">&nbsp;-&nbsp;developer<span>.</span></h1>
   </div>
-  <p class="t-body-bigger">I build user interfaces using Vue.js, Sass, Js and UE4/C++.<br>I love Agile development, Lean principles and component-driven design.</p>
+  <p class="t-body-bigger">I build user interfaces using Vue.js, Nuxt.js, Sass, Js and UE4/C++.<br>I love Agile development, Lean principles and component-driven design.</p>
 </section>
 </template>
 
