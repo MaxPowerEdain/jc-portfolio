@@ -21,10 +21,11 @@ export default {
   name: 'appHeader',
   props: ['changesColor'],
   mounted() {
+    const navBar = document.querySelector('#nav-bar-wrapper');
     if (this.changesColor) changeNavBarColor();
+    else navBar.style.backgroundColor = "rgb(4, 15, 87)";
 
     function changeNavBarColor(){
-      const navBar = document.querySelector('#nav-bar-wrapper');
       const initialColor = [18, 52, 141];
       const endColor = [4, 15, 87]; //todo pick from scss or background gradient
       let incrementArray = [];

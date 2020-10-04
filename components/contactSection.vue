@@ -15,9 +15,11 @@
           C32.6,7.3,25.3,0,16.3,0z"/>
       </svg>
     </a>
-    <div class="contact-link" id="email-button">
+    <div v-on:click="showEmail = !showEmail" class="contact-link" id="email-button">
       <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="none"/><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-      <span id="email-dropdown" class="t-nav">joancarazo1994@gmail.com</span>
+      <transition name="fade">
+        <span v-if="showEmail" id="email-dropdown" class="t-nav">joancarazo1994@gmail.com</span>
+      </transition>
     </div>
     <a class="contact-link" href="https://www.linkedin.com/in/joan-carazo-a8ba62130/" target='_blank'>
       <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128.88 129.6" fill="white">
@@ -45,15 +47,8 @@
 
 <script>
 export default {
-  mounted() {
-    document.querySelector('#email-button').addEventListener('click', () =>{
-      let dropdown = document.querySelector('#email-dropdown');
-      if(dropdown.style.display == 'none' || dropdown.style.display == '') dropdown.style.display = 'inline';
-      else dropdown.style.display = 'none';
-      dropdown.addEventListener('click', (event) => {
-        event.stopPropagation();
-      })
-    })
+  data() {
+    return { showEmail: false }
   }
 }
 </script>
@@ -127,25 +122,21 @@ export default {
   }
 
   #email-dropdown{
-    display: none;
+    display: block;
     position: absolute;
     color: white;
     font-size: 18px;
     top: 175%;
     left: 50%;
     transform: translate(-50%);
-    animation-name: email-animation;
-    animation-duration: 1.5s;
     overflow: hidden;
   }
 }
 
-@keyframes email-animation{
-  0% {
-    opacity: 0%;
-  }
-  100% {
-    opacity: 100%;
-  }
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
 }
 </style>

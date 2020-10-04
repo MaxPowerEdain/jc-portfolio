@@ -87,7 +87,7 @@
         "text": "Although I am not super interested in CSS animations or complicated effects, I had fun building a small algorithm that changed the color of the Navigation Bar based on the scroll position in the main page, so that it matched the gradient in the home section.",
         "image": "vuejs-portfolio/css.png"}, 
       { "name": "Dynamic components",
-        "text": "One of my favourite things in Frameworks such as Vue is reusing code for components and passing dynamic data. Makes very simple to add new projects, modify the exisiting ones, and generally get new pages and content without writing more code: the data is all I have to care about!",
+        "text": "Most of this portfolio is generated using dynamic components, which get the data from a JSON file in the static folder. This allows adding projects and features quickly and without altering the code.",
         "image": "vuejs-portfolio/components.png"}
     ],
     "learning": "Vue.js has been my first Frontend framework, and I loved using it. I also learned to implement Bootstrap-Vue and Sass using Nuxt.js, which is very useful and saved much development time, while helping me to organize the style code better",

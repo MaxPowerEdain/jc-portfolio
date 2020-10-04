@@ -19,7 +19,7 @@
     <p class="t-body-primary project-learning project-bottom-blocks">
       <span class="t-header-small">Learning: </span>{{ project.learning }}
     </p>
-    <p class="t-body-primary project-problems project-bottom-blocks">
+    <p v-if="project.problems" class="t-body-primary project-problems project-bottom-blocks">
       <span class="t-header-small">Problems: </span>{{ project.problems }}
     </p>
   </div>
