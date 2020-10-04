@@ -1,8 +1,11 @@
 <template>
   <div id="project-page" class="flex-centered-column">
+    <appHeader :changesColor="false"/>
     <h1 class="t-header">{{ project.name }}</h1>
     <p class="t-body-primary">{{ project.description }}</p>
-    <iframe v-if="project.additional" width="560" height="315" src="https://www.youtube.com/embed/nUxWkpTr6F4?start=149" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div v-if="project.additional" id="iframe-container">
+      <iframe :src="project.additional" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
     <section class="project-links">
       <a v-if="project.github" :href="project.github" target="_blank" class="t-button">Github</a>
       <a v-if="project.url" :href="project.url" target="_blank" class="t-button">Visit</a>
@@ -24,12 +27,13 @@
 
 <script>
 import projectsJSON from '../../static/projects.json';
+import appHeader from '../../components/appHeader';
 import projectFeature from '../../components/projectFeature';
 
 export default {
   head(){
     return {
-      title: 'JC-Portfolio',
+      title: 'Joan Carazo - Portfolio',
       link: [
           {
             rel: 'stylesheet',
@@ -39,6 +43,7 @@ export default {
     }
   },
   components: {
+    appHeader,
     projectFeature
   },
   data() {
@@ -65,6 +70,33 @@ export default {
   p{
     margin: 0 $margin-regular;
   }
+}
+
+#iframe-container{
+  position: relative;
+  width: 80%;
+  overflow: hidden;
+  background-color: green;
+  padding: 0;
+  margin: 50px;
+
+  @media(min-width: $breakpoint){
+    width: 60%
+  }
+}
+
+#iframe-container::after {
+    padding-top: 56.25%;
+    display: block;
+    content: '';
+}
+
+#iframe-container iframe { 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .project-learning{
@@ -104,10 +136,6 @@ export default {
   @media(min-width: $breakpoint){
     width: 75%;
   }
-}
-
-iframe{
-  margin: 50px;
 }
 
 .project-links{

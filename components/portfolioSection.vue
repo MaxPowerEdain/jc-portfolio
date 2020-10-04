@@ -4,7 +4,7 @@
     <div id="portfolio-title-decoration" class="titles-decoration subtitles-decoration"></div>
     <h2 class="t-header">Portfolio<span>.</span></h2>
   </div>
-  <p class="t-body-primary">I love learning by doing, and this projects have fueled my motivation to discover new tecnologies and become a better developer.</p>
+  <p class="t-body-primary">I love learning by doing, and these projects have fueled my motivation to discover new tecnologies and become a better developer.</p>
 </section>
 </template>
 

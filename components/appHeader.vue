@@ -19,35 +19,41 @@
 <script>
 export default {
   name: 'appHeader',
+  props: ['changesColor'],
   mounted() {
-    const navBar = document.querySelector('#nav-bar-wrapper');
-    const initialColor = [18, 52, 141];
-    const endColor = [4, 15, 87]; //todo pick from scss or background gradient
-    let incrementArray = [];
+    if (this.changesColor) changeNavBarColor();
 
-    //calculates the increment/decrement between the two colors
-    for(let i = 0; i < endColor.length; i++){
-      incrementArray.push(endColor[i] - initialColor[i]);
+    function changeNavBarColor(){
+      const navBar = document.querySelector('#nav-bar-wrapper');
+      const initialColor = [18, 52, 141];
+      const endColor = [4, 15, 87]; //todo pick from scss or background gradient
+      let incrementArray = [];
+
+      //calculates the increment/decrement between the two colors
+      for(let i = 0; i < endColor.length; i++){
+        incrementArray.push(endColor[i] - initialColor[i]);
+      }
+
+      window.addEventListener('scroll', () =>{
+        let navBarHeight = navBar.clientHeight;
+        let windowHeight = window.innerHeight;
+        let windowScrolled = window.scrollY;
+
+      //calculates how much screen we scrolled (between 0 and 1)
+        let scrollRatio = (windowHeight - windowScrolled)/windowHeight;
+        let scrollRatioNav = (windowHeight - windowScrolled - navBarHeight * (1 - scrollRatio))/windowHeight;
+        let newColor = [];
+        for(let i = 0; i < incrementArray.length; i++){
+          newColor.push((1 - scrollRatioNav) * incrementArray[i] + initialColor[i]);
+        }
+        let [r, g, b] = newColor;
+        r = Math.max(endColor[0], Math.min(r, initialColor[0]));
+        g = Math.max(endColor[1], Math.min(g, initialColor[1]));
+        b = Math.max(endColor[2], Math.min(b, initialColor[2]));
+        navBar.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+      });
     }
 
-    window.addEventListener('scroll', () =>{
-      let navBarHeight = navBar.clientHeight;
-      let windowHeight = window.innerHeight;
-      let windowScrolled = window.scrollY;
-
-    //calculates how much screen we scrolled (between 0 and 1)
-      let scrollRatio = (windowHeight - windowScrolled)/windowHeight;
-      let scrollRatioNav = (windowHeight - windowScrolled - navBarHeight * (1 - scrollRatio))/windowHeight;
-      let newColor = [];
-      for(let i = 0; i < incrementArray.length; i++){
-        newColor.push((1 - scrollRatioNav) * incrementArray[i] + initialColor[i]);
-      }
-      let [r, g, b] = newColor;
-      r = Math.max(endColor[0], Math.min(r, initialColor[0]));
-      g = Math.max(endColor[1], Math.min(g, initialColor[1]));
-      b = Math.max(endColor[2], Math.min(b, initialColor[2]));
-      navBar.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-    });
   }
 }
 </script>
@@ -59,6 +65,7 @@ export default {
   top: 0;
   background-color: $primary-light;
   color: white;
+  width: 100%;
 }
 
 .nav-item.nav-item.nav-item a {

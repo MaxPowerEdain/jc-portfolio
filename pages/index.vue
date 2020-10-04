@@ -1,5 +1,6 @@
 <template>
   <main class="flex-centered-column">
+    <appHeader :changesColor="true"/>
     <homeSection/>
     <aboutSection/>
     <portfolioSection/>
@@ -23,6 +24,7 @@
 
 <script>
 import projectsJSON from '../static/projects.json';
+import appHeader from '../components/appHeader'
 import projectCard from '../components/projectCard';
 import homeSection from '../components/homeSection';
 import aboutSection from '../components/aboutSection';
@@ -32,6 +34,7 @@ import colorStyles from '../assets/scss/variables.scss';
 
 export default {
   components: {
+    appHeader,
     projectCard,
     homeSection,
     aboutSection,
@@ -61,7 +64,7 @@ export default {
   },
   head(){
     return {
-      title: 'JC-Portfolio',
+      title: 'Joan Carazo - Portfolio',
       link: [
           {
             rel: 'stylesheet',

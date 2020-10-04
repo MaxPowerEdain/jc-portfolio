@@ -6,11 +6,11 @@
   </div>
   <div id="about-container" class="flex-centered-column">
     <p class="t-body-primary"><span class="t-header-small">Before,</span>
-    I studied violin for 18 years in Valencia, Zaragoza and Vienna, following a carrear as teacher and freelance player. I developed discipline, endurance, self-learning skills, motivation, and improvement mindset.</p>
+    I studied violin for 18 years in Valencia, Zaragoza and Vienna, following a career as teacher and freelance player. I developed discipline, endurance, self-learning skills, motivation, and improved my mindset.</p>
     <p class="t-body-primary"><span class="t-header-small">Now,</span>
-    I have finished a Frontend Bootcamp in Factoría F5, where I learned about Agile development, teamwork, and modern web-development tecnologies and tools. I continue gaining knowledge in their Fullstack Bootcamp. And I also strenghten my programming skills by coding C++ in UE4 as UI developer in the fan-project BFME Reforged.</p>
+    I have finished a Frontend Bootcamp in Factoría F5, where I have learned about Agile development, teamwork, and modern web-development technologies and tools. I continue gaining knowledge in their Fullstack Bootcamp. Furthermore, I also strengthened my programming skills by coding C++ in UE4 as UI developer.</p>
     <p class="t-body-primary"><span class="t-header-small">Next,</span>
-    I am deepening my knowledge of Vue.js and backend languages and frameworks. In the future, I look forward to work with Cloud-based solutions to build the backend for flexible and scalable apps. Other areas of interest/specialization include low-level programming (C/C++) and web/cloud security management.</p>
+    I am deepening my knowledge of Vue.js, backend languages and frameworks. In the future, I look forward to working with Cloud-based solutions to build the backend for flexible and scalable apps. Other areas of interest/specialization include low-level programming (C/C++) and web/cloud security management.</p>
   </div>
   </section>
 </template>

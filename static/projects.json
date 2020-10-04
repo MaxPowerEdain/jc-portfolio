@@ -3,7 +3,7 @@
     "id": "project1",
     "name": "Suzuki Teaching Points",
     "intro": "When I was told that I had to make yet another written assignment during my Suzuki violin teaching course, I knew using a traditional word/pdf document with some images was not what I wanted. So I researched and decided to build an interactive web app to display the music scores and the pedagogical analysis on top of them.",
-    "description": "This static site displays the scores from the Suzuki Violin Method books. A multi-layered, clickable SVG overlay holds the information on the piece structure and teaching points (also divided in right/left hands). The audio of the piece is also playable while looking at the score. Altough the site is built in  a very ineficient way, the result was very satisfactory and I look forward to rebuild the site using modern rendering template systems. Built using HTML, CSS and Javascript",
+    "description": "This static site displays the scores from the Suzuki Violin Method books. A multi-layered, clickable SVG overlay holds the information on the piece structure and teaching points (also divided in right/left hands). The audio of the piece is also playable while looking at the score. Altough the site is built in a very ineficient way, the result was very satisfactory and I look forward to rebuilding the site using modern rendering template systems. Built using HTML, CSS and Javascript",
     "features": [
       { "name": "SVG", 
         "text": "Vector graphics offer very interesting possibilities in web design. In this case, I took advantage of inline SVG shapes made in Adobe Illustrator, with click events added, to toogle visibility of each layer of content.",
@@ -15,7 +15,7 @@
       }
     ],
     "learning": "I learned simple HTML and CSS, with a bit of Javascript for the SVG interface. I also practised prototyping and SVG handling in Adobe Illustrator.",
-    "problems": "The code is redundant, since each html file has a big css file that could be shared between all pages. The javascript code could be much simpler if it used functions and loops. And the architecure is funny, actually each page contains all the image files, html, css, js, and even font files instead of actually having them all in a shared folder.",
+    "problems": "The code is redundant, since each html file has a big css file that could be shared between all pages. The javascript code could be much simpler if it used functions and loops. And the architecure is funny, actually each page contains all the image files, html, css, js, and even font files instead of actually having them all in a shared folder. Also, the page is not very responsive, doesn't work on mobile view for example.",
     "image": "suzuki-teaching-points.png",
     "url": "https://maxpowerreforged.github.io/Suzuki-Teaching-Points/Main/index.html",
     "github": "https://github.com/MaxPowerReforged/Suzuki-Teaching-Points",
@@ -66,12 +66,13 @@
         "text": "BFME's UI is complex. I fully realized it after building an entire menu using only 1 widget, which resulted in a lot of repetitive work and a nightmare widget tree. Also, the C++ class was handling way more functionalty than it should. Therefore, we decided to switch to component development, in order to agilize the work in the future and increase maintanabilty (the components shown feature 2D assets made by our artists).",
         "image": "bfme-reforged/components.png"}
     ],
-    "learning": "Using C++ in a big project has been very enriching in lots of aspects. Besides working with Object Oriented Programming, I research into UE4's documentation constantly, look at code written by others, and learn to colaborate with the other team members. Having more experienced developers review my code is also very helpful.",
+    "learning": "Using C++ in a big project has been very enriching in lots of aspects. Besides working with Object Oriented Programming, I research into UE4's documentation constantly, looking at code written by others, and learning to collaborate with the other team members. Having more experienced developers review my code is also very helpful.",
     "problems": "The widget system can increase in complexity very fast. Also, OOP requires careful consideration of how code is structured, which I didn't do properly at the beggining.",
     "image": "bfme-reforged.png",
     "url": "https://bfmereforged.org/",
     "github": "",
-    "additional": "https://youtu.be/nUxWkpTr6F4?t=149"
+    "additional": "https://www.youtube.com/embed/nUxWkpTr6F4?start=149"
+    
   },
   {
     "id": "project4",
