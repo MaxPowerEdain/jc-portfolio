@@ -8,9 +8,9 @@
       <h1 class="t-header-main">&nbsp;-&nbsp;developer<span>.</span></h1>
     </div>
     <p class="t-body-bigger">
-      I build software using Javascript/Typescript, C++ and PHP with their
+      I build software using Typescript and C++ with their
       latest frameworks and libraries.<br />In love with Agile development,
-      Clean Architectures and Testing Driven Developement.
+      Clean Architecture and Testing Driven Development.
     </p>
   </section>
 </template>

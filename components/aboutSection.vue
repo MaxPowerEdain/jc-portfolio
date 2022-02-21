@@ -17,11 +17,11 @@
         was enriched by focused guidance and training in Factoria F5 Bootcamp.
       </p>
       <p class="t-body-primary">
-        <span class="t-header-small">Now,</span> I work at the startup Nokues as
-        a fullstack developer using Nuxt.js and Symfony. It is very motivating
+        <span class="t-header-small">Now,</span> I work at the startup Agranimo as
+        a frontend developer using Next.js and Typescript. It is very motivating
         to apply tech solutions to real problems from clients and users. I also
         have fun contributing as C++ developer in BFME Reforged videogame, using
-        Unreal Engine.
+        the Unreal Engine.
       </p>
       <p class="t-body-primary">
         <span class="t-header-small">Next,</span> I am deepening my knowledge of

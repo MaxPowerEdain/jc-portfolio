@@ -2,8 +2,8 @@
   {
     "id": "edain-ranked",
     "name": "Edain Ranked",
-    "intro": "This was my first dynamic website, and it's developement process took months. I wanted to make a ranking site for an online game with replay storage. The app is hosted and built using Amazon Web Services, which was both a big challenge and lots of fun.",
-    "description": "This app works in a simple way: players register, upload games, and recieve an ELO score based on their wins/loses. Their games and replays get stored, and the page displays a ranking, a replay list (with download links) and statistics from all the games played. Future plans include multilingual support, a replay parser (kindly written and gifted by FG15), and a season system. Built using HTML, CSS, Javascript, JQuery, Chartist.js, Node.js and MYSQL. A second, more modern version of this site is being built using Nuxt.js and Highcharts.js",
+    "intro": "This was my first dynamic website. I wanted to make a ranking site for an online game with replay storage. The app is hosted and built using Amazon Web Services, which was both a big challenge and lots of fun.",
+    "description": "This app works in a simple way: players register, upload games, and receive an ELO score based on their wins/loses. Their games and replays get stored, and the page displays a ranking, a replay list (with download links) and statistics from all the games played. Future plans include multilingual support, a replay parser (kindly written and gifted by FG15), and a season system. Built using HTML, CSS, Javascript, JQuery, Chartist.js, Node.js and MYSQL.",
     "features": [
       {
         "name": "Architecture",
@@ -28,7 +28,6 @@
     ],
     "learning": "This project was a big task. On the one hand, I learned more about HTML and CSS, designed and built SVG images for the UI, and used a bit of JQuery. On the other hand, I needed to learn backend tecnologies such as Node.js, several AWS services and their APIs, and MYSQL for database queries.",
     "image": "edain-ranked.png",
-    "url": "http://edainranked.com",
     "github": "https://github.com/MaxPowerReforged/Edain-Ranked-Website",
     "additional": ""
   },
@@ -36,7 +35,7 @@
     "id": "harstem-stats",
     "name": "Harstem's Stats",
     "intro": "Team Liquid's pro-player Harstem needed a way to keep track and visualize his performance in his youtube series 'Road to Rank One', 'Getting Grandmaster with Terran', and 'Getting Grandmaster with Zerg'. I reached to him and proposed to do a small site with some graphs querying Blizzard's APIs.",
-    "description": "Team Liquid's pro-player Harstem needed a way to keep track and visualize his performance in his youtube series 'Road to Rank One', 'Getting Grandmaster with Terran', and 'Getting Grandmaster with Zerg'. I reached to him and proposed to do a small site with some graphs querying Blizzard's APIs. The project ended up being slighlty more complicated as Blizzard's API was providing incomplete data. So the initial frontend was accompanied by a small server that scraps data each minute, and another frontend app to enter some metadata manually.",
+    "description": "Team Liquid's pro-player Harstem needed a way to keep track and visualize his performance in his youtube series 'Road to Rank One', 'Getting Grandmaster with Terran', and 'Getting Grandmaster with Zerg'. I reached to him and proposed to do a small site with some graphs querying Blizzard's APIs. The project ended up being slightly more complicated as Blizzard's API was providing incomplete data. So the initial frontend was accompanied by a small server that scraps data each minute, and another frontend app to enter some metadata manually.",
     "features": [
       {
         "name": "The website",
@@ -45,7 +44,7 @@
       },
       {
         "name": "The Blizzard scrapper",
-        "text": "Blizzard community API for Starcraft 2 is a bit incomplete in regards to data: We could get partial information from the historic of matches, but other data (such as the MMR points at a given time) were not stored.The solution was to code a small scrapper in Typescript, which queries the API, detects changes (for example, if a game has been played) and stores the current information accordingly. Then, the information is stored in our own Firestore database to consume from the frontend.",
+        "text": "Blizzard community API for Starcraft 2 is a bit incomplete in regards to data: We could get partial information from the historic of matches, but other data (such as the MMR points at a given time) was not stored. The solution was to code a small scrapper in Typescript, which queries the API, detects changes (for example, if a game has been played) and stores the current information accordingly. Then, the information is stored in our own Firestore database to be consumed from the frontend.",
         "image": "harstem-stats/ts-scrapper.png"
       },
       {
@@ -64,7 +63,7 @@
     "id": "bfme-reforged",
     "name": "BFME Reforged",
     "intro": "BFME Reforged is a fan-made remake in Unreal Engine 4 of the beloved classic 'The Lord of the Rings: The Battle for the Middle Earth' series. Learning C and C++ was very important for me as a begginer developer, and I worked hard to acquire the necessary skills that I would need in order to become a team member. Now, I focus on developing the UI and the underlying systems that are required, most excitingly, networking and client-server replication.",
-    "description": "My work on BFME Reforged is focused on UI development. I planned, coordinated and built our UI Component Library with a small subteam in order to speed up the later phases of work. Now, I have finished most of the Online Menus and switched to ingame UI tasks.",
+    "description": "My work on BFME Reforged is focused on UI development. I planned, coordinated and built our UI Component Library with a small sub-team in order to speed up the later phases of work. After some gameplay-related UI tasks, I recently switched my focus towards networking and Unreal's replication system.",
     "features": [
       {
         "name": "The Online Lobby",
@@ -83,7 +82,7 @@
       },
       {
         "name": "Components",
-        "text": "We decided to build a component library before building our UI. Thi allowed us to achieve greater coherence in both style/appearance and code consistency, pay more attention to small details, and build the UI faster in the long run.",
+        "text": "We decided to build a component library before building our UI. This allowed us to achieve greater coherence in both style/appearance and code consistency, pay more attention to small details, and build the UI faster in the long run.",
         "image": "bfme-reforged/components.png"
       }
     ],
@@ -96,8 +95,8 @@
   {
     "id": "learning-exercises",
     "name": "Learning projects and exercises",
-    "intro": "This are some smaller projects or exercises that I used to learn or experiment with new technologies, as part of course assignments or class exercises.",
-    "description": "This are some smaller projects or exercises that I used to learn or experiment with new technologies, as part of course assignments or class exercises.",
+    "intro": "These are some smaller projects or exercises that I used to learn or to experiment with new technologies, as part of course assignments or class exercises.",
+    "description": "This are some smaller projects or exercises that I used to learn or to experiment with new technologies, as part of course assignments or class exercises.",
     "features": [
       {
         "name": "Suzuki Teaching Points",
