@@ -1,0 +1,132 @@
+[
+  {
+    "id": "edain-ranked",
+    "name": "Edain Ranked",
+    "intro": "This was my first dynamic website. I wanted to make a ranking site for an online game with replay storage. The app is hosted and built using Amazon Web Services, which was both a big challenge and lots of fun.",
+    "description": "This app works in a simple way: players register, upload games, and receive an ELO score based on their wins/loses. Their games and replays get stored, and the page displays a ranking, a replay list (with download links) and statistics from all the games played. Future plans include multilingual support, a replay parser (kindly written and gifted by FG15), and a season system. Built using HTML, CSS, Javascript, JQuery, Chartist.js, Node.js and MYSQL.",
+    "features": [
+      {
+        "name": "Architecture",
+        "text": "The frontend is hosted on S3 storage, which also stores the game replays. The REST API (using AWS's API Gateway) calls Lambda functions, which execute the server-side code that manages the MYSQL database. Cognito serves as user-management service.",
+        "image": "edain-ranked/structure.png"
+      },
+      {
+        "name": "Lambda functions",
+        "text": "Go serverless! Having a server running 24/7 seemed overkill for a website with fairly low traffic. Lambda functions run on request every time the API calls them. In this way, we can handle the database CRUD operations easily on demand. The lambda functions themselves are coded using Node.js and its MYSQl library",
+        "image": "edain-ranked/lambda.png"
+      },
+      {
+        "name": "MYSQL database",
+        "text": "The database stores all persistent information, such as players and their ranking, maps, replays, and historical ranking results. Various queries handled from the Lambda functions save and retrieve data. The queries use placeholders to prevent SQL injections.",
+        "image": "edain-ranked/database.png"
+      },
+      {
+        "name": "Chart library",
+        "text": "In order to display statistics from the database, I decided to use a library to render data visually. I chose Chartist.js for their lightweight, svg-based library. It is easily customizable using CSS and its API is simple to use.",
+        "image": "edain-ranked/charts.png"
+      }
+    ],
+    "learning": "This project was a big task. On the one hand, I learned more about HTML and CSS, designed and built SVG images for the UI, and used a bit of JQuery. On the other hand, I needed to learn backend tecnologies such as Node.js, several AWS services and their APIs, and MYSQL for database queries.",
+    "image": "edain-ranked.png",
+    "github": "https://github.com/MaxPowerReforged/Edain-Ranked-Website",
+    "additional": ""
+  },
+  {
+    "id": "harstem-stats",
+    "name": "Harstem's Stats",
+    "intro": "Team Liquid's pro-player Harstem needed a way to keep track and visualize his performance in his youtube series 'Road to Rank One', 'Getting Grandmaster with Terran', and 'Getting Grandmaster with Zerg'. I reached to him and proposed to do a small site with some graphs querying Blizzard's APIs.",
+    "description": "Team Liquid's pro-player Harstem needed a way to keep track and visualize his performance in his youtube series 'Road to Rank One', 'Getting Grandmaster with Terran', and 'Getting Grandmaster with Zerg'. I reached to him and proposed to do a small site with some graphs querying Blizzard's APIs. The project ended up being slightly more complicated as Blizzard's API was providing incomplete data. So the initial frontend was accompanied by a small server that scraps data each minute, and another frontend app to enter some metadata manually.",
+    "features": [
+      {
+        "name": "The website",
+        "text": "The main website is made with Nuxt.js, and mainly consists of Highcharts.js visualizations of Harstem's data: The evolution of his ranking points, his winrate vs different races, and by map. The data is read from Firebase's Firestore.",
+        "image": "harstem-road-rank-one.png"
+      },
+      {
+        "name": "The Blizzard scrapper",
+        "text": "Blizzard community API for Starcraft 2 is a bit incomplete in regards to data: We could get partial information from the historic of matches, but other data (such as the MMR points at a given time) was not stored. The solution was to code a small scrapper in Typescript, which queries the API, detects changes (for example, if a game has been played) and stores the current information accordingly. Then, the information is stored in our own Firestore database to be consumed from the frontend.",
+        "image": "harstem-stats/ts-scrapper.png"
+      },
+      {
+        "name": "The data entry website",
+        "text": "Even with the scrapper, the information was incomplete: We wanted to have timestamps and links to the videos for game, the opponent's name, race and MMR, etc. The solution was to make a small page where we could enter the data manually in the most efficient and straight-forward way. I used Nuxt.js and Vuetify to speed the design process.",
+        "image": "harstem-stats/data-entry.png"
+      }
+    ],
+    "learning": "This project was very interesting to learn Typescript in a backend environment, applying the depencency-inversion principle in order to keep the infrastructure (mostly, the Firestore and Blizzard.js SDKs) away from the business logic of the scrapper. The planning and structuring of the data I needed and how to collect it using the scrapper was also very enriching and fun.",
+    "image": "harstem-road-rank-one.png",
+    "url": "https://maxpowerreforged.github.io/harstem-road-to-rank-1/",
+    "github": "https://github.com/MaxPowerReforged/harstem-road-to-rank-1",
+    "additional": ""
+  },
+  {
+    "id": "bfme-reforged",
+    "name": "BFME Reforged",
+    "intro": "BFME Reforged is a fan-made remake in Unreal Engine 4 of the beloved classic 'The Lord of the Rings: The Battle for the Middle Earth' series. Learning C and C++ was very important for me as a begginer developer, and I worked hard to acquire the necessary skills that I would need in order to become a team member. Now, I focus on developing the UI and the underlying systems that are required, most excitingly, networking and client-server replication.",
+    "description": "My work on BFME Reforged is focused on UI development. I planned, coordinated and built our UI Component Library with a small sub-team in order to speed up the later phases of work. After some gameplay-related UI tasks, I recently switched my focus towards networking and Unreal's replication system.",
+    "features": [
+      {
+        "name": "The Online Lobby",
+        "text": "When players want to find an online game, they connect to the online-lobby. Rooms are created in our server and real-time data about each one is provided via web-sockets.",
+        "image": "bfme-reforged/online-lobby.png"
+      },
+      {
+        "name": "The Online Room",
+        "text": "A room is found and all players are eager to start playing! The online room is where they can pick teams, colors, faction, and other options before the battle.",
+        "image": "bfme-reforged/online-room.png"
+      },
+      {
+        "name": "UMG",
+        "text": "UMG is UE4's UI system. We needed responsive and scalable widgets, I dived hard into UMG's tools to learn how to tile images, stretch them without losing quality/ratio, etc.",
+        "image": "bfme-reforged/responsive.gif"
+      },
+      {
+        "name": "Components",
+        "text": "We decided to build a component library before building our UI. This allowed us to achieve greater coherence in both style/appearance and code consistency, pay more attention to small details, and build the UI faster in the long run.",
+        "image": "bfme-reforged/components.png"
+      }
+    ],
+    "learning": "Using C++ in a big project has been very enriching in lots of aspects. Besides working with Object Oriented Programming, I research into UE4's documentation constantly, look at code written by others, and learn to collaborate with the other team members. Having more experienced developers review my code is also very helpful.",
+    "image": "bfme-reforged.png",
+    "url": "https://bfmereforged.org/",
+    "github": "",
+    "additional": "https://www.youtube.com/embed/nUxWkpTr6F4?start=149"
+  },
+  {
+    "id": "learning-exercises",
+    "name": "Learning projects and exercises",
+    "intro": "These are some smaller projects or exercises that I used to learn or to experiment with new technologies, as part of course assignments or class exercises.",
+    "description": "This are some smaller projects or exercises that I used to learn or to experiment with new technologies, as part of course assignments or class exercises.",
+    "features": [
+      {
+        "name": "Suzuki Teaching Points",
+        "text": "As part of my Pedagogic violin courses, I was required to write the Teaching Points of the pieces I had been working on. I decided to build them as a static website which uses SVG layers to show different features.",
+        "image": "suzuki-teaching-points.png"
+      },
+      {
+        "name": "F5 Notificator",
+        "text": "I was proposed to make a small Flutter app during my bootcamp, which turned into this small message/notification app. The goal was to send simple text notifications with a color that represented the urgency of the message. It was inspired by old beepers, and is built using Flutter and Dart.",
+        "image": "f5-notificator.png"
+      },
+      {
+        "name": "My portfolio",
+        "text": "I love building apps to solve my own necessities, this portfolio is one of those apps. I wanted to make a project using a modern frontend framework, and I wanted to start displaying my own work, so it was two birds with one stone.",
+        "image": "vuejs-portfolio.png"
+      },
+      {
+        "name": "Quick Union-Find C++ implementation",
+        "text": "Learning algorithms is in my study path, I implemented the different Union-Find ones in order to understand the implications of each solution.",
+        "image": "quick-union.png"
+      },
+      {
+        "name": "Strategy Pattern in Typescript and Jest",
+        "text": "Implementation of the Strategy Pattern. I made a quick example of an Invoice Prodived, which has two different ways (strategies) to print dates.",
+        "image": "strategy-pattern.png"
+      }
+    ],
+    "image": "vuejs-portfolio.png",
+    "url": "",
+    "github": "https://github.com/MaxPowerReforged",
+    "additional": ""
+  }
+]
